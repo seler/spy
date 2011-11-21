@@ -44,11 +44,18 @@ class Site(object):
                 f.write(new)
                 f.close()
                 print('\n'.join(result))
-                # TODO: dodac do mailera
+                # TODO: mail
+                import smtplib
+
+                s = smtplib.SMTP('localhost')
+                msg = 'From: %s\r\nTo: %s\r\nSubject: Website %s has changed\r\n%s' % ('seler@tyrion', 'rselewonko@gmail.com', self.name, '\n'.join(result))
+                
+                s.sendmail('seler@tyrion', 'rselewonko@gmail.com', msg.encode('ascii', 'ignore'))
+                s.quit()
 
 
     def content(self):
-        response =  urlopen(self.url)
+        response = urlopen(self.url)
         content = response.read()
         # TODO: let specify encoding for each site or figureout something bette
         return content.decode('latin2')
