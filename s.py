@@ -43,15 +43,14 @@ class Site(object):
                 f = open(self.file, 'w')
                 f.write(new)
                 f.close()
-                for line in result:
-                    print(line)
+                print('\n'.join(result))
                 # TODO: dodac do mailera
 
 
     def content(self):
         response =  urlopen(self.url)
         content = response.read()
-        # TODO: let specify encoding for each site
+        # TODO: let specify encoding for each site or figureout something bette
         return content.decode('latin2')
 
 
