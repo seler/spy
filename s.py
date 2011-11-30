@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+# JK: grep pattern s.py
+
+# TODO: gdyby zapewnić, że tylko raz da się uruhomić skrypt to by był singleton pattern
+
 import configparser
 import os
 import re
@@ -62,7 +66,7 @@ class Site(object):
 
 
 class SPy(object):
-    
+    """Facade pattern???""" 
     def __init__(self):
         self.configure()
         self.spy()
@@ -73,6 +77,7 @@ class SPy(object):
         config = configparser.ConfigParser()
         config.read(cfg_file)
         self.sites = []
+        # jakby fora zamknąć w klasę to by było Factory pattern
         for section in config.sections():
             if not section == 'GLOBAL':
                 try:
