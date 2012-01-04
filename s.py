@@ -64,7 +64,6 @@ class Site(object):
         # TODO: let specify encoding for each site or figureout something bette
         return content.decode('latin2')
 
-
 class SPy(object):
     """Facade pattern???""" 
     def __init__(self):
