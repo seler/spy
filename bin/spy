@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+
+#    sPy: Python based script tracking changes at any url
+#    Copyright (C) 2011  Rafał Selewońko <rafal@selewonko.com>
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+import os
+import sys
+
+## Add project root directory (enable symlink, and trunk execution).
+#PROJECT_ROOT_DIRECTORY = os.path.abspath(
+#    os.path.dirname(os.path.dirname(os.path.realpath(sys.argv[0]))))
+#
+#if (os.path.exists(os.path.join(PROJECT_ROOT_DIRECTORY, 'dotfiles'))
+#    and PROJECT_ROOT_DIRECTORY not in sys.path):
+#    sys.path.insert(0, PROJECT_ROOT_DIRECTORY)
+#    os.putenv('PYTHONPATH', PROJECT_ROOT_DIRECTORY)
+#
+#import dotfiles.cli
+#
+#if __name__ == '__main__':
+#    dotfiles.cli.main()
