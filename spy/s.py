@@ -364,6 +364,11 @@ class SPy(object):
         self.config = configparser.ConfigParser()
         self.config.read(cfg_file)
 
+    def initialize_mailer(self):
+        mailer = Mailer.get_instance()
+        import pdb
+        pdb.set_trace()
+
     def spy(self):
         for site in self.sites:
             new_content = site.download_new_content()
@@ -384,6 +389,7 @@ def main():
 
     spy = SPy()
     spy.configure()
+    spy.initialize_mailer()
     spy.get_sites()
     spy.spy()
     spy.notify()
