@@ -48,7 +48,6 @@ def slugify(value):
     return re.sub('[-\s]+', '-', value)
 
 
-
 class Mailer(object):
     """Singleton pattern"""
     class NotSingle(Exception):
@@ -59,6 +58,7 @@ class Mailer(object):
             self.__class__.__instance = self
         else:
             raise self.__class__.NotSingle()
+
     @classmethod
     def get_instance(cls):
         if cls.__instance is None:
@@ -66,37 +66,69 @@ class Mailer(object):
         else:
             return cls.__instance
 
-    def configure():
-        self.recipients = ['rselewonko@gmail.com', 'selerto@gmail.com']
+    def configure(self, sender, default_recipients, host, port, username, password, use_tls):
+        self.messages = {}
+        self.default_recipients = ['rselewonko@gmail.com', 'selerto@gmail.com']
+        self.sender = 'sPy <selerto@gmail.com>'
+        self.host = host
+        self.port = port
+        self.username = username
+        self.password = password
+        self.use_tls = use_tls
 
-    def prepare_notification(self, name, location, diff, recipients=None):
+    def prepare_notification(self, name, diff, location, recipients=None):
         if recipients is None:
             recipients = self.default_recipients
 
         for r in recipients:
             try:
-                self.messages[r] += (name, location, diff)
+                self.messages[r] += [(name, location, diff)]
             except KeyError:
-                self.messages[r] = (name, location, diff)
+                self.messages[r] = [(name, location, diff)]
 
-    def make_email(recipient, name, location, diff):
+    def make_email(self, sender, recipient, data):
+        subject = "sPy detected changes on "
+        text = "Hi.\nThere are changes on things I spy for you.\n\n"
+        html = "<html><head><title>sPy</title></head><body><p>Hi.</p><p>There are changes on things I spy for you.</p>"
+        
+        data_len = len(data) - 1
+        for i, d in enumerate(data):
+            name, location, diff = d
+            subject += name
+            text += "%s at %s:\n%s\n\n" % (name, location, diff)
+            html += "<p>%s at <a href=\"%s\">%s</a>:</p><pre>%s</pre>" % (name, location, location, diff)
+            
+            if not i == data_len:  # if not last
+                subject += ", "
+
+        subject += "."
+        text += "That's all. I'm going back to spying.\nBye"
+        html += "<p>That's all. I'm going back to spying.<br>Bye.</p></body></html>"
+
         msg = MIMEMultipart('alternative')
-        msg['Subject'] = "bleblelbe"
-        msg['From'] = self.from
+        msg['Subject'] = subject
+        msg['From'] = sender
         msg['To'] = recipient
         
+        msg.attach(MIMEText(text, 'plain'))
+        msg.attach(MIMEText(html, 'html'))
 
-    def make_messages():
+        return msg
+        
+
+    def make_messages(self):
         self.emails = []
-        for recipient, data in self.messages:
-            name, site, location, diff = data
-            email = self.make_email(recipient, name, location, diff)
-            self.emails.append((self.from, recipient, email))
+        for recipient, data in self.messages.items():
+            email = self.make_email(self.sender, recipient, data)
+            self.emails.append((self.sender, recipient, email))
 
-    def send_messsages():
-        s = smtplib.SMTP('localhost')
-        for from, to, msg in self.emails:
-            s.sendmail(from, to, msg.as_string())
+    def send_messages(self):
+        s = smtplib.SMTP('%s:%s' % (self.host, str(self.port)))
+        if self.use_tls:
+            s.starttls()
+        s.login(self.username, self.password)
+        for sender, to, msg in self.emails:
+            s.sendmail(sender, to, msg.as_string())
         s.quit()
 
 
@@ -190,7 +222,13 @@ class Site(object):
         return bool(self.diff)
 
     def prepare_notification(self):
-        self.mailer.prepare_notification(self.name, self.diff, self.recipients)
+        self.mailer.prepare_notification(self.name, self.diff, self.location, self.recipients)
+
+    def set_diff(self, value):
+        self.diff = value
+
+    def get_diff(self):
+        return self.diff
 
 class AbstractProxy(object):
     """Proxy pattern"""
@@ -243,6 +281,12 @@ class AbstractProxy(object):
     def prepare_notification(self):
         return self.subject.prepare_notification()
 
+    def set_diff(self, value):
+        return self.subject.set_diff(value)
+
+    def get_diff(self):
+        return self.subject.get_diff()
+
 
 class TextSite(AbstractProxy):
     "cokolwiek trescia tekstowa"
@@ -253,11 +297,11 @@ class TextSite(AbstractProxy):
                             tofile='new version')
         diff = list(diff)
         if diff:
-            self.diff = '\n'.join(diff)
+            self.set_diff('\n'.join(diff))
             self.save_new_content()
             if VERBOSE:
                 sys.stdout.write('site "%s" has changed\n' % self.get_name())
-                sys.stdout.write(self.diff)
+                sys.stdout.write(self.get_diff())
                 sys.stdout.write('\n')
         else:
             if VERBOSE:
@@ -332,6 +376,12 @@ class AbstractDecorator(object):
     def prepare_notification(self):
         return self.subject.prepare_notification()
 
+    def set_diff(self, value):
+        return self.subject.set_diff(value)
+
+    def get_diff(self):
+        return self.subject.get_diff()
+
 
 class OnlineSiteDecorator(AbstractDecorator):
     def download_new_content(self):
@@ -405,8 +455,16 @@ class SPy(object):
         self.config.read(cfg_file)
 
     def initialize_mailer(self):
+        conf = self.config['SPY']
+        sender = conf['email_from']
+        default_recipients = conf['email_to']
+        host = conf['smtp_host']
+        port = conf['smtp_port']
+        username = conf['smtp_username']
+        password = conf['smtp_password']
+        use_tls = conf['smtp_tls']
         mailer = Mailer.get_instance()
-        mailer.configure()
+        mailer.configure(sender, default_recipients, host, port, username, password, use_tls)
 
     def spy(self):
         for site in self.sites:
@@ -419,7 +477,9 @@ class SPy(object):
                 site.prepare_notification()
 
     def notify(self):
-        pass
+        mailer = Mailer.get_instance()
+        mailer.make_messages()
+        mailer.send_messages()
 
 
 def main():
