@@ -145,33 +145,6 @@ class Site(object):
                                                     self.slug))
         self.diff = None
 
-#    def check(self):
-#        try:
-#            f = open(self.filename, 'r')
-#        except IOError:
-#            f = open(self.filename, 'w')
-#            f.write(self.content())
-#            f.close()
-#        else:
-#            new = self.download_new_content()
-#            old = f.read()
-#            result = list(unified_diff(old.splitlines(), new.splitlines(),
-#                fromfile='old version', tofile='new version'))
-#            f.close()
-#            if result:
-#                f = open(self.filename, 'w')
-#                f.write(new)
-#                f.close()
-#                print('\n'.join(result))
-#                # TODO: mail
-#                import smtplib
-#
-#                s = smtplib.SMTP('localhost')
-#                msg = 'From: %s\r\nTo: %s\r\nSubject: Website %s has changed\r\n%s' % ('seler@tyrion', 'rselewonko@gmail.com', self.name, '\n'.join(result))
-
-#                s.sendmail('seler@tyrion', 'rselewonko@gmail.com', msg.encode('ascii', 'ignore'))
-#                s.quit()
-
     def download_new_content(self):
         pass
 
@@ -198,7 +171,7 @@ class Site(object):
         if self.new_content != self.old_content:
             if VERBOSE:
                 sys.stdout.write('site "%s" has changed\n' % self.get_name())
-            self.diff = 'there is a difference'
+            self.diff = 'contents of files are different'
             self.save_new_content()
         else:
             if VERBOSE:
@@ -387,7 +360,7 @@ class OnlineSiteDecorator(AbstractDecorator):
     def download_new_content(self):
         response = urlopen(self.subject.get_location())
         content = response.read()
-        return self.subject.parse_new_content(content.decode('latin2')) # FIXME
+        return self.subject.parse_new_content(content.decode('ascii', errors='ignore')) # FIXME
 
 
 class OfflineSiteDecorator(AbstractDecorator):
@@ -457,7 +430,7 @@ class SPy(object):
     def initialize_mailer(self):
         conf = self.config['SPY']
         sender = conf['email_from']
-        default_recipients = conf['email_to']
+        default_recipients = conf['email_to'].split(',')
         host = conf['smtp_host']
         port = conf['smtp_port']
         username = conf['smtp_username']

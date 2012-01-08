@@ -1,0 +1,29 @@
+[SPY]
+
+email_from = sPy <sender@gmail.com>
+email_to = First Recipient <recipient1@gmail.com>, Second Recipient <recipient2@gmail.com>
+smtp_host = smtp.gmail.com
+smtp_port = 587
+smtp_username = sender@gmail.com
+smtp_password = ********
+smtp_tls = True
+
+[rozklad zajec]
+type = html
+site = online
+location = http://www.degra.wi.pb.edu.pl/rozklady/rozklad.php?page=st
+
+[jakis tekst]
+type = text
+site = online
+location = http://www.google.pl/robots.txt
+
+[rozklad zajec pdf]
+type = binary
+site = online
+location = http://www.degra.wi.pb.edu.pl/rozklady/doc/isi5.pdf
+
+[cos lokalnego]
+type = binary
+site = offline
+location = /home/seler/.spyrc
