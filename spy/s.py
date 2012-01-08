@@ -68,8 +68,8 @@ class Mailer(object):
 
     def configure(self, sender, default_recipients, host, port, username, password, use_tls):
         self.messages = {}
-        self.default_recipients = ['rselewonko@gmail.com', 'selerto@gmail.com']
-        self.sender = 'sPy <selerto@gmail.com>'
+        self.default_recipients = default_recipients
+        self.sender = sender
         self.host = host
         self.port = port
         self.username = username
