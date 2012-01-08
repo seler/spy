@@ -20,7 +20,12 @@ import configparser
 import hashlib
 import os
 import re
+import smtplib
 import sys
+
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 from urllib.request import urlopen
 
 from difflib import *
@@ -61,14 +66,49 @@ class Mailer(object):
         else:
             return cls.__instance
 
+    def configure():
+        self.recipients = ['rselewonko@gmail.com', 'selerto@gmail.com']
+
+    def prepare_notification(self, name, location, diff, recipients=None):
+        if recipients is None:
+            recipients = self.default_recipients
+
+        for r in recipients:
+            try:
+                self.messages[r] += (name, location, diff)
+            except KeyError:
+                self.messages[r] = (name, location, diff)
+
+    def make_email(recipient, name, location, diff):
+        msg = MIMEMultipart('alternative')
+        msg['Subject'] = "bleblelbe"
+        msg['From'] = self.from
+        msg['To'] = recipient
+        
+
+    def make_messages():
+        self.emails = []
+        for recipient, data in self.messages:
+            name, site, location, diff = data
+            email = self.make_email(recipient, name, location, diff)
+            self.emails.append((self.from, recipient, email))
+
+    def send_messsages():
+        s = smtplib.SMTP('localhost')
+        for from, to, msg in self.emails:
+            s.sendmail(from, to, msg.as_string())
+        s.quit()
+
+
 
 class Site(object):
 
-    def __init__(self, name, location, slug, mailer):
+    def __init__(self, name, location, slug, recipients=None):
         self.name = name
         self.location = location
-        self.mailer = mailer
+        self.mailer = Mailer.get_instance()
         self.slug = slug
+        self.recipients = recipients
         self.filename = os.path.expanduser(os.path.join(SPY_DEFAULT_DATA_DIR,
                                                     self.slug))
         self.diff = None
@@ -150,7 +190,7 @@ class Site(object):
         return bool(self.diff)
 
     def prepare_notification(self):
-        pass
+        self.mailer.prepare_notification(self.name, self.diff, self.recipients)
 
 class AbstractProxy(object):
     """Proxy pattern"""
@@ -366,8 +406,7 @@ class SPy(object):
 
     def initialize_mailer(self):
         mailer = Mailer.get_instance()
-        import pdb
-        pdb.set_trace()
+        mailer.configure()
 
     def spy(self):
         for site in self.sites:
