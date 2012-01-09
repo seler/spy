@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-
+# -*- coding: utf-8 -*-
+"""asdfg"""
 #    sPy: Python based script tracking changes at any url
 #    Copyright (C) 2011  Rafał Selewońko <rafal@selewonko.com>
 #

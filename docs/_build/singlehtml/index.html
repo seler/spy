@@ -1,0 +1,149 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sPy v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="None" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#">sPy v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-spy-s-documentation">
+<h1>Welcome to sPy&#8217;s documentation!<a class="headerlink" href="#welcome-to-spy-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>sPy is Python based script tracking changes at any online or offline location.
+After detecting changes it sends emails notyfying about differences.</p>
+</div>
+<div class="section" id="structure">
+<h1>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="user-s-guide">
+<h1>User&#8217;s guide<a class="headerlink" href="#user-s-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Config file should be under <tt class="docutils literal"><span class="pre">~/.spyrc</span></tt>. For full example see <tt class="docutils literal"><span class="pre">.spyrc</span></tt> in sources.</p>
+<div class="section" id="spy-section">
+<h3>SPY section<a class="headerlink" href="#spy-section" title="Permalink to this headline">¶</a></h3>
+<p>SPY section is about email. Here&#8217;s an example:</p>
+<div class="highlight-python"><pre>[SPY]
+email_from = sPy &lt;selerto@gmail.com&gt;
+email_to = Rafa Selewoko &lt;rselewonko@gmail.com&gt;, Zenek Mietek &lt;selerto@gmail.com&gt;
+smtp_host = smtp.gmail.com
+smtp_port = 587
+smtp_username = selerto@gmail.com
+smtp_password = *******
+smtp_tls = True</pre>
+</div>
+</div>
+<div class="section" id="sites-sections">
+<h3>Sites sections<a class="headerlink" href="#sites-sections" title="Permalink to this headline">¶</a></h3>
+<p>Each section that&#8217;s name is not <tt class="docutils literal"><span class="pre">SPY</span></tt> represents site to check. Here&#8217;s an example:</p>
+<div class="highlight-python"><pre>[Rozkład zajęć]
+# choices are text, html, binary
+type = html
+# choices are online or offilne
+site = online
+# starts with ``http`` if online, with ``/`` if offline
+location = http://www.degra.wi.pb.edu.pl/rozklady/rozklad.php?page=st
+
+# slug is only required if you want to check each site separately
+slug = rozkladzajec</pre>
+</div>
+</div>
+</div>
+<div class="section" id="running-spy">
+<h2>Running sPy<a class="headerlink" href="#running-spy" title="Permalink to this headline">¶</a></h2>
+<p>To check all sites:</p>
+<div class="highlight-python"><pre>./s.py or python3 /location/of/s.py</pre>
+</div>
+<p>To check specified sites:</p>
+<div class="highlight-python"><pre>python3 /location/of/s.py site1_slug site2_slug</pre>
+</div>
+<p>It&#8217;s the best to run sPy from <strong>cron</strong> or <strong>Windows Task Sheduler</strong>.</p>
+</div>
+</div>
+<div class="section" id="requirements">
+<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>python3</li>
+</ul>
+</div>
+<div class="section" id="license">
+<h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
+<p>sPy: Python based script tracking changes at any url
+Copyright (C) 2011  Rafał Selewońko &lt;<a class="reference external" href="mailto:rafal&#37;&#52;&#48;selewonko&#46;com">rafal<span>&#64;</span>selewonko<span>&#46;</span>com</a>&gt;</p>
+<p>This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.</p>
+<p>This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#">sPy v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Rafał Selewońko.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+    </div>
+  </body>
+</html>
