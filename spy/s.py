@@ -397,7 +397,7 @@ class SiteFactory(object):
         if type == 'binary':
             site_class = BinarySite
 
-        site_object = site_class(section.name, location, slugify(section.name), None)
+        site_object = site_class(section.name, location, getattr(section, 'slug', slugify(section.name)), None)
         # chain of decorators :D 
         if site == 'offline':
             site_object = OfflineSiteDecorator(site_object)
@@ -419,11 +419,14 @@ class SPy(object):
         site_factory = SiteFactory()
         for section in self.config.sections():
             if not section == 'SPY':
+                if self.site_slugs:
+                    if self.config[section].get('slug', slugify(section)) not in self.site_slugs:
+                        continue
                 self.sites.append(site_factory.get_site(self.config[section]))
 
-    def configure(self, cfg_file=None):
-        if not cfg_file:
-            cfg_file = os.path.expanduser(SPY_DEFAULT_CONFIG_FILE)
+    def configure(self, site_slugs=None):
+        self.site_slugs = site_slugs
+        cfg_file = os.path.expanduser(SPY_DEFAULT_CONFIG_FILE)
         self.config = configparser.ConfigParser()
         self.config.read(cfg_file)
 
@@ -456,19 +459,27 @@ class SPy(object):
 
 
 def main():
-    if VERBOSE:
+    args = list(sys.argv[1:])
+    if '-v' in args:
+        VERBOSE = True
+        args.remove('-v')
         sys.stdout.write('verbose mode on\n\n')
+    if '-q' in args:
+        QUIET = True
+        args.remove('-q')
+
+    # what's left in ``args`` are slugs of sites to check
+    if args:
+        site_slugs = args
+    else:
+        site_slugs = None
 
     spy = SPy()
-    spy.configure()
+    spy.configure(site_slugs)
     spy.initialize_mailer()
     spy.get_sites()
     spy.spy()
     spy.notify()
 
 if __name__ == "__main__":
-    if '-v' in sys.argv:
-        VERBOSE = True
-    if '-q' in sys.argv:
-        QUIET = True
     main()
