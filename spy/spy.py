@@ -36,7 +36,7 @@ SPY_DEFAULT_DATA_DIR = '~/.sPy/'
 DEFAULT_SITE_TYPE = 'text'
 
 
-VERBOSE = False
+VERBOSE = True
 QUIET = False
 
 class ImproperlyConfigured(Exception):
@@ -345,6 +345,7 @@ class TextSite(AbstractProxy):
             self.set_diff('\n'.join(diff))
             self.save_new_content()
             if VERBOSE:
+
                 sys.stdout.write('site "%s" has changed\n' % self.get_name())
                 sys.stdout.write(self.get_diff())
                 sys.stdout.write('\n')
@@ -471,12 +472,6 @@ class NewSiteDecorator(AbstractDecorator):
             f.write(new_content)
             f.close()
 
-    def compare(self):
-        """
-        Nothing to compare ;)
-        """
-        pass
-
 
 class SiteFactory(object):
     """
@@ -563,11 +558,11 @@ class SPy(object):
         """
         Runs everything.
         """
-        spy.configure()
-        spy.initialize_mailer()
-        spy.get_sites()
-        spy.spy()
-        spy.notify()
+        self.configure()
+        self.initialize_mailer()
+        self.get_sites()
+        self.spy()
+        self.notify()
 
 
 def main():
