@@ -12,9 +12,9 @@ After detecting changes it sends emails notyfying about differences.
 Source
 ======
 
-Source is available as mercurial repository at bitbucket. To download latest code run::
+Source is available as mercurial repository at bitbucket. To download latest stable release run::
 
-    hg clone https://bitbucket.org/seler/spy
+    hg clone https://bitbucket.org/seler/spy -r stable
 
 Structure
 =========
