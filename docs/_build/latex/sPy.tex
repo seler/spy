@@ -585,7 +585,7 @@ set self.\_\_traceback\_\_ to tb and return self.
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Mailer}\pysigline{\strong{class }\code{spy.}\bfcode{Mailer}}
-Singleton pattern
+Singleton pattern.
 
 Collects, creates and sends notification emails.
 \index{Mailer.NotSingle}
@@ -1032,7 +1032,9 @@ Facade pattern
 \index{Site (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.Site}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{Site}}{\emph{name}, \emph{location}, \emph{slug}, \emph{recipients=None}}{}~\index{compare() (spy.Site method)}
+\phantomsection\label{index:spy.Site}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{Site}}{\emph{name}, \emph{location}, \emph{slug}, \emph{recipients=None}}{}
+Represents single resource
+\index{compare() (spy.Site method)}
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Site.compare}\pysiglinewithargsret{\bfcode{compare}}{}{}
@@ -1042,12 +1044,16 @@ Facade pattern
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Site.download_new_content}\pysiglinewithargsret{\bfcode{download\_new\_content}}{}{}
+Dummy. Left for customization in decorators or proxies.
+
 \end{fulllineitems}
 
 \index{download\_old\_content() (spy.Site method)}
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Site.download_old_content}\pysiglinewithargsret{\bfcode{download\_old\_content}}{}{}
+Opens old file (downloaded during last check) and returns it's content.
+
 \end{fulllineitems}
 
 \index{get\_diff() (spy.Site method)}
@@ -1078,12 +1084,16 @@ Facade pattern
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Site.get_new_content}\pysiglinewithargsret{\bfcode{get\_new\_content}}{}{}
+Returns new (downloaded) content.
+
 \end{fulllineitems}
 
 \index{get\_old\_content() (spy.Site method)}
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Site.get_old_content}\pysiglinewithargsret{\bfcode{get\_old\_content}}{}{}
+Return old content.
+
 \end{fulllineitems}
 
 \index{has\_changed() (spy.Site method)}
@@ -1096,6 +1106,8 @@ Facade pattern
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Site.parse_new_content}\pysiglinewithargsret{\bfcode{parse\_new\_content}}{\emph{content}}{}
+Parses new content after downloading.
+
 \end{fulllineitems}
 
 \index{prepare\_notification() (spy.Site method)}
@@ -1120,12 +1132,16 @@ Facade pattern
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Site.set_new_content}\pysiglinewithargsret{\bfcode{set\_new\_content}}{\emph{value}}{}
+Sets new content from \emph{value}.
+
 \end{fulllineitems}
 
 \index{set\_old\_content() (spy.Site method)}
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Site.set_old_content}\pysiglinewithargsret{\bfcode{set\_old\_content}}{\emph{value}}{}
+Sets old content from \emph{value}.
+
 \end{fulllineitems}
 
 

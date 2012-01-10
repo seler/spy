@@ -54,7 +54,7 @@ def slugify(value):
 
 class Mailer(object):
     """
-    Singleton pattern
+    Singleton pattern.
 
     Collects, creates and sends notification emails.
     """
@@ -163,6 +163,9 @@ class Mailer(object):
 
 
 class Site(object):
+    """
+    Represents single resource
+    """
 
     def __init__(self, name, location, slug, recipients=None):
         self.name = name
@@ -175,25 +178,46 @@ class Site(object):
         self.diff = None
 
     def download_new_content(self):
+        """
+        Dummy. Left for customization in decorators or proxies.
+        """
         pass
 
     def get_new_content(self):
+        """
+        Returns new (downloaded) content.
+        """
         return self.new_content
 
     def set_new_content(self, value):
+        """
+        Sets new content from *value*.
+        """
         self.new_content = value
 
     def download_old_content(self):
+        """
+        Opens old file (downloaded during last check) and returns it's content.
+        """
         f = open(self.get_filename(), 'r')
         return f.read()
 
     def get_old_content(self):
+        """
+        Return old content.
+        """
         return self.old_content
 
     def set_old_content(self, value):
+        """
+        Sets old content from *value*.
+        """
         self.old_content = value
 
     def parse_new_content(self, content):
+        """
+        Parses new content after downloading.
+        """
         return content
 
     def compare(self):
