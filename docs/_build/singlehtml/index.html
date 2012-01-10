@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sPy v0.1 documentation</title>
+    <title>sPy 0.1 documentation</title>
+    
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -28,7 +31,7 @@
     <div class="related">
       <h3>Navigation</h3>
       <ul>
-        <li><a href="#">sPy v0.1 documentation</a> &raquo;</li> 
+        <li><a href="#">sPy 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -42,8 +45,58 @@
 <p>sPy is Python based script tracking changes at any online or offline location.
 After detecting changes it sends emails notyfying about differences.</p>
 </div>
-<div class="section" id="structure">
-<h1>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-s">
+<span id="structure"></span><h1>Structure<a class="headerlink" href="#module-s" title="Permalink to this headline">¶</a></h1>
+<p>asdfg</p>
+<dl class="class">
+<dt id="s.AbstractDecorator">
+<em class="property">class </em><tt class="descclassname">s.</tt><tt class="descname">AbstractDecorator</tt><big>(</big><em>subject</em><big>)</big><a class="headerlink" href="#s.AbstractDecorator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator pattern</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="s.AbstractProxy">
+<em class="property">class </em><tt class="descclassname">s.</tt><tt class="descname">AbstractProxy</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#s.AbstractProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Proxy pattern</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="s.BinarySite">
+<em class="property">class </em><tt class="descclassname">s.</tt><tt class="descname">BinarySite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#s.BinarySite" title="Permalink to this definition">¶</a></dt>
+<dd><p>cokolwiek tylko do sprawdzenia czy sie zmienilo z poprzednim;
+sprawdzane na podstawie hasha md5 lub sha1</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="s.HTMLSite">
+<em class="property">class </em><tt class="descclassname">s.</tt><tt class="descname">HTMLSite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#s.HTMLSite" title="Permalink to this definition">¶</a></dt>
+<dd><p>cokolwiek trescia html</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="s.Mailer">
+<em class="property">class </em><tt class="descclassname">s.</tt><tt class="descname">Mailer</tt><a class="headerlink" href="#s.Mailer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Singleton pattern</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="s.SPy">
+<em class="property">class </em><tt class="descclassname">s.</tt><tt class="descname">SPy</tt><a class="headerlink" href="#s.SPy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Facade pattern</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="s.SiteFactory">
+<em class="property">class </em><tt class="descclassname">s.</tt><tt class="descname">SiteFactory</tt><a class="headerlink" href="#s.SiteFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Factory pattern</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="s.TextSite">
+<em class="property">class </em><tt class="descclassname">s.</tt><tt class="descname">TextSite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#s.TextSite" title="Permalink to this definition">¶</a></dt>
+<dd><p>cokolwiek trescia tekstowa</p>
+</dd></dl>
+
 </div>
 <div class="section" id="user-s-guide">
 <h1>User&#8217;s guide<a class="headerlink" href="#user-s-guide" title="Permalink to this headline">¶</a></h1>
@@ -138,12 +191,12 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
     <div class="related">
       <h3>Navigation</h3>
       <ul>
-        <li><a href="#">sPy v0.1 documentation</a> &raquo;</li> 
+        <li><a href="#">sPy 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2012, Rafał Selewońko.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
   </body>
 </html>

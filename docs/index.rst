@@ -12,8 +12,10 @@ After detecting changes it sends emails notyfying about differences.
 Structure
 =========
 
-.. automodule:: s
+.. automodule:: spy
    :members:
+   :undoc-members:
+   :inherited-members:
 
 User's guide
 ============
@@ -59,11 +61,11 @@ Running sPy
 
 To check all sites::
 
-    ./s.py or python3 /location/of/s.py
+    ./spy.py or python3 /location/of/spy.py
 
 To check specified sites::
 
-    python3 /location/of/s.py site1_slug site2_slug
+    python3 /location/of/spy.py site1_slug site2_slug
 
 It's the best to run sPy from **cron** or **Windows Task Sheduler**.
 

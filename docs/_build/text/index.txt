@@ -1,0 +1,504 @@
+
+Welcome to sPy's documentation!
+*******************************
+
+sPy is Python based script tracking changes at any online or offline
+location. After detecting changes it sends emails notyfying about
+differences.
+
+
+Structure
+*********
+
+class class spy.AbstractDecorator(subject)
+
+   Decorator pattern
+
+   compare()
+
+   download_new_content()
+
+   download_old_content()
+
+   get_diff()
+
+   get_filename()
+
+   get_location()
+
+   get_name()
+
+   get_new_content()
+
+   get_old_content()
+
+   has_changed()
+
+   notify()
+
+   parse_new_content(content)
+
+   prepare_notification()
+
+   save_new_content()
+
+   set_diff(value)
+
+   set_new_content(value)
+
+   set_old_content(value)
+
+class class spy.AbstractProxy(*args, **kwargs)
+
+   Proxy pattern
+
+   compare()
+
+   download_new_content()
+
+   download_old_content()
+
+   get_diff()
+
+   get_filename()
+
+   get_location()
+
+   get_name()
+
+   get_new_content()
+
+   get_old_content()
+
+   has_changed()
+
+   notify()
+
+   parse_new_content(content)
+
+   prepare_notification()
+
+   save_new_content()
+
+   set_diff(value)
+
+   set_new_content(value)
+
+   set_old_content(value)
+
+class class spy.BinarySite(*args, **kwargs)
+
+   cokolwiek tylko do sprawdzenia czy sie zmienilo z poprzednim;
+   sprawdzane na podstawie hasha md5 lub sha1
+
+   compare()
+
+   download_new_content()
+
+   download_old_content()
+
+   get_diff()
+
+   get_filename()
+
+   get_location()
+
+   get_name()
+
+   get_new_content()
+
+   get_old_content()
+
+   has_changed()
+
+   notify()
+
+   parse_new_content(content)
+
+   prepare_notification()
+
+   save_new_content()
+
+   set_diff(value)
+
+   set_new_content(value)
+
+   set_old_content(value)
+
+class class spy.HTMLSite(*args, **kwargs)
+
+   cokolwiek trescia html
+
+   compare()
+
+   download_new_content()
+
+   download_old_content()
+
+   get_diff()
+
+   get_filename()
+
+   get_location()
+
+   get_name()
+
+   get_new_content()
+
+   get_old_content()
+
+   has_changed()
+
+   notify()
+
+   parse_new_content(content)
+
+   prepare_notification()
+
+   save_new_content()
+
+   set_diff(value)
+
+   set_new_content(value)
+
+   set_old_content(value)
+
+exception exception spy.ImproperlyConfigured
+
+   args
+
+   with_traceback()
+
+      Exception.with_traceback(tb) -- set self.__traceback__ to tb and
+      return self.
+
+class class spy.Mailer
+
+   Singleton pattern
+
+   Collects, creates and sends notification emails.
+
+   exception exception NotSingle
+
+      args
+
+      with_traceback()
+
+         Exception.with_traceback(tb) -- set self.__traceback__ to tb
+         and return self.
+
+   Mailer.configure(sender, default_recipients, host, port, username, password, use_tls)
+
+      Configures mailer.
+
+   classmethod Mailer.get_instance()
+
+      Returns instance of Mailer. If no instance ever existed it
+      creates one.
+
+   Mailer.make_email(sender, recipient, data)
+
+      Creates and returns email message for single recipient.
+
+   Mailer.make_messages()
+
+      Creates messages for all recipients.
+
+   Mailer.prepare_notification(name, diff, location, recipients=None)
+
+      Adds single notification about single site.
+
+   Mailer.send_messages()
+
+      Sends all messages.
+
+class class spy.NewSiteDecorator(*args, **kwargs)
+
+   compare()
+
+   download_new_content()
+
+   download_old_content()
+
+   get_diff()
+
+   get_filename()
+
+   get_location()
+
+   get_name()
+
+   get_new_content()
+
+   get_old_content()
+
+   has_changed()
+
+   notify()
+
+   parse_new_content(content)
+
+   prepare_notification()
+
+   save_new_content()
+
+   set_diff(value)
+
+   set_new_content(value)
+
+   set_old_content(value)
+
+class class spy.OfflineSiteDecorator(subject)
+
+   compare()
+
+   download_new_content()
+
+   download_old_content()
+
+   get_diff()
+
+   get_filename()
+
+   get_location()
+
+   get_name()
+
+   get_new_content()
+
+   get_old_content()
+
+   has_changed()
+
+   notify()
+
+   parse_new_content(content)
+
+   prepare_notification()
+
+   save_new_content()
+
+   set_diff(value)
+
+   set_new_content(value)
+
+   set_old_content(value)
+
+class class spy.OnlineSiteDecorator(subject)
+
+   compare()
+
+   download_new_content()
+
+   download_old_content()
+
+   get_diff()
+
+   get_filename()
+
+   get_location()
+
+   get_name()
+
+   get_new_content()
+
+   get_old_content()
+
+   has_changed()
+
+   notify()
+
+   parse_new_content(content)
+
+   prepare_notification()
+
+   save_new_content()
+
+   set_diff(value)
+
+   set_new_content(value)
+
+   set_old_content(value)
+
+class class spy.SPy
+
+   Facade pattern
+
+   configure(site_slugs=None)
+
+   get_sites()
+
+   initialize_mailer()
+
+   notify()
+
+   spy()
+
+class class spy.Site(name, location, slug, recipients=None)
+
+   compare()
+
+   download_new_content()
+
+   download_old_content()
+
+   get_diff()
+
+   get_filename()
+
+   get_location()
+
+   get_name()
+
+   get_new_content()
+
+   get_old_content()
+
+   has_changed()
+
+   parse_new_content(content)
+
+   prepare_notification()
+
+   save_new_content()
+
+   set_diff(value)
+
+   set_new_content(value)
+
+   set_old_content(value)
+
+class class spy.SiteFactory
+
+   Factory pattern
+
+   get_site(section)
+
+class class spy.TextSite(*args, **kwargs)
+
+   cokolwiek trescia tekstowa
+
+   compare()
+
+   download_new_content()
+
+   download_old_content()
+
+   get_diff()
+
+   get_filename()
+
+   get_location()
+
+   get_name()
+
+   get_new_content()
+
+   get_old_content()
+
+   has_changed()
+
+   notify()
+
+   parse_new_content(content)
+
+   prepare_notification()
+
+   save_new_content()
+
+   set_diff(value)
+
+   set_new_content(value)
+
+   set_old_content(value)
+
+spy.main()
+
+spy.slugify(value)
+
+   Normalizes string, converts to lowercase, removes non-alpha
+   characters, and converts spaces to hyphens.
+
+
+User's guide
+************
+
+
+Configuration
+=============
+
+Config file should be under "~/.spyrc". For full example see ".spyrc"
+in sources.
+
+
+SPY section
+-----------
+
+SPY section is about email. Here's an example:
+
+   [SPY]
+   email_from = sPy <selerto@gmail.com>
+   email_to = Rafa Selewoko <rselewonko@gmail.com>, Zenek Mietek <selerto@gmail.com>
+   smtp_host = smtp.gmail.com
+   smtp_port = 587
+   smtp_username = selerto@gmail.com
+   smtp_password = *******
+   smtp_tls = True
+
+
+Sites sections
+--------------
+
+Each section that's name is not "SPY" represents site to check. Here's
+an example:
+
+   [Rozkład zajęć]
+   # choices are text, html, binary
+   type = html
+   # choices are online or offilne
+   site = online
+   # starts with ``http`` if online, with ``/`` if offline
+   location = http://www.degra.wi.pb.edu.pl/rozklady/rozklad.php?page=st
+
+   # slug is only required if you want to check each site separately
+   slug = rozkladzajec
+
+
+Running sPy
+===========
+
+To check all sites:
+
+   ./s.py or python3 /location/of/s.py
+
+To check specified sites:
+
+   python3 /location/of/s.py site1_slug site2_slug
+
+It's the best to run sPy from **cron** or **Windows Task Sheduler**.
+
+
+Requirements
+************
+
+* python3
+
+
+License
+*******
+
+sPy: Python based script tracking changes at any url Copyright (C)
+2011  Rafał Selewońko <rafal@selewonko.com>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at
+your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.

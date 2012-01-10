@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""asdfg"""
+
 #    sPy: Python based script tracking changes at any url
 #    Copyright (C) 2011  Rafał Selewońko <rafal@selewonko.com>
 #
@@ -42,18 +42,27 @@ QUIET = False
 class ImproperlyConfigured(Exception):
     pass
 
-
 def slugify(value):
+    """
+    Normalizes string, converts to lowercase, removes non-alpha characters,
+    and converts spaces to hyphens.
+    """
     value = value.encode('ascii', 'ignore').decode('utf-8')
     value = re.sub('[^\w\s-]', '', value).strip().lower()
     return re.sub('[-\s]+', '-', value)
 
 
 class Mailer(object):
-    """Singleton pattern"""
+    """
+    Singleton pattern
+
+    Collects, creates and sends notification emails.
+    """
+
     class NotSingle(Exception):
         pass
     __instance = None
+
     def __init__(self):
         if self.__class__.__instance is None:
             self.__class__.__instance = self
@@ -62,12 +71,19 @@ class Mailer(object):
 
     @classmethod
     def get_instance(cls):
+        """
+        Returns instance of Mailer.
+        If no instance ever existed it creates one.
+        """
         if cls.__instance is None:
             return cls()
         else:
             return cls.__instance
 
     def configure(self, sender, default_recipients, host, port, username, password, use_tls):
+        """
+        Configures mailer.
+        """
         self.messages = {}
         self.default_recipients = default_recipients
         self.sender = sender
@@ -78,6 +94,9 @@ class Mailer(object):
         self.use_tls = use_tls
 
     def prepare_notification(self, name, diff, location, recipients=None):
+        """
+        Adds single notification about single site.
+        """
         if recipients is None:
             recipients = self.default_recipients
 
@@ -88,6 +107,9 @@ class Mailer(object):
                 self.messages[r] = [(name, location, diff)]
 
     def make_email(self, sender, recipient, data):
+        """
+        Creates and returns email message for single recipient.
+        """
         subject = "sPy detected changes on "
         text = "Hi.\nThere are changes on things I spy for you.\n\n"
         html = "<html><head><title>sPy</title></head><body><p>Hi.</p><p>There are changes on things I spy for you.</p>"
@@ -118,12 +140,18 @@ class Mailer(object):
         
 
     def make_messages(self):
+        """
+        Creates messages for all recipients.
+        """
         self.emails = []
         for recipient, data in self.messages.items():
             email = self.make_email(self.sender, recipient, data)
             self.emails.append((self.sender, recipient, email))
 
     def send_messages(self):
+        """
+        Sends all messages.
+        """
         s = smtplib.SMTP('%s:%s' % (self.host, str(self.port)))
         if self.use_tls:
             s.starttls()
