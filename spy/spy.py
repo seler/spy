@@ -36,8 +36,8 @@ SPY_DEFAULT_DATA_DIR = '~/.sPy/'
 DEFAULT_SITE_TYPE = 'text'
 
 
-VERBOSE = True
-QUIET = False
+VERBOSE = False
+QUIET = True
 
 class ImproperlyConfigured(Exception):
     pass
@@ -486,7 +486,7 @@ class NewSiteDecorator(AbstractDecorator):
         If it's new site returns empty string.
         """
         if not self.is_new:
-            self.subject.download_new_content()
+            return self.subject.download_new_content()
         else:
             return ''
     
@@ -495,7 +495,7 @@ class NewSiteDecorator(AbstractDecorator):
         If it's new site returns empty string.
         """
         if not self.is_new:
-            self.subject.download_old_content()
+            return self.subject.download_old_content()
         else:
             return ''
 
