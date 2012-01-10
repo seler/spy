@@ -47,6 +47,12 @@ hg clone https://bitbucket.org/seler/spy
 .TP
 .B class spy.BinarySite(*args, **kwargs)
 Extends default Site behaviour providing md5 hash check for binary files.
+.INDENT 7.0
+.TP
+.B parse_new_content(content)
+Instead of comparing md5 hashes it will prepare new content as
+hashes to conserve space and speedup script.
+.UNINDENT
 .UNINDENT
 .INDENT 0.0
 .TP
@@ -57,8 +63,13 @@ about changes in html resource.
 .INDENT 0.0
 .TP
 .B class spy.TextSite(*args, **kwargs)
-Extends default Site behaviour providing more information (unified diff)
+Extends default \fBSite\fP behaviour providing more information (unified diff)
 about changes in text resource.
+.INDENT 7.0
+.TP
+.B compare()
+Compares files using \fBdifflib.unified_diff\fP.
+.UNINDENT
 .UNINDENT
 .SS Decorator pattern
 .INDENT 0.0
@@ -71,6 +82,21 @@ Provides access to content offline.
 .B class spy.OnlineSiteDecorator(subject)
 Provides access to content online.
 .UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.NewSiteDecorator(*args, **kwargs)
+Supports initial check for new sites.
+.INDENT 7.0
+.TP
+.B download_new_content()
+If it\(aqs new site returns empty string.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B download_old_content()
+If it\(aqs new site returns empty string.
+.UNINDENT
+.UNINDENT
 .SS Singleton pattern
 .INDENT 0.0
 .TP
@@ -78,18 +104,59 @@ Provides access to content online.
 Singleton pattern.
 .sp
 Collects, creates and sends notification emails.
+.INDENT 7.0
+.TP
+.B configure(sender, default_recipients, host, port, username, password, use_tls)
+Configures mailer.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B classmethod get_instance()
+Returns instance of Mailer.
+If no instance ever existed it creates one.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B make_email(sender, recipient, data)
+Creates and returns email message for single recipient.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B make_messages()
+Creates messages for all recipients.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B prepare_notification(name, diff, location, recipients=None)
+Adds single notification about single site.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B send_messages()
+Sends all messages.
+.UNINDENT
 .UNINDENT
 .SS Factory pattern
 .INDENT 0.0
 .TP
 .B class spy.SiteFactory
 Factory pattern.
+.INDENT 7.0
+.TP
+.B get_site(section)
+Generates \fBSite\fP object.
+.UNINDENT
 .UNINDENT
 .SS Facade pattern
 .INDENT 0.0
 .TP
 .B class spy.SPy(site_slugs=None)
 Facade pattern.
+.INDENT 7.0
+.TP
+.B run()
+Runs everything.
+.UNINDENT
 .UNINDENT
 .SH SOURCE CODE
 .INDENT 0.0
@@ -249,6 +316,8 @@ Extends default Site behaviour providing md5 hash check for binary files.
 .INDENT 7.0
 .TP
 .B parse_new_content(content)
+Instead of comparing md5 hashes it will prepare new content as
+hashes to conserve space and speedup script.
 .UNINDENT
 .UNINDENT
 .INDENT 0.0
@@ -313,8 +382,13 @@ Sends all messages.
 Supports initial check for new sites.
 .INDENT 7.0
 .TP
-.B compare()
-Nothing to compare ;)
+.B download_new_content()
+If it\(aqs new site returns empty string.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B download_old_content()
+If it\(aqs new site returns empty string.
 .UNINDENT
 .UNINDENT
 .INDENT 0.0
@@ -458,11 +532,12 @@ Generates \fBSite\fP object.
 .INDENT 0.0
 .TP
 .B class spy.TextSite(*args, **kwargs)
-Extends default Site behaviour providing more information (unified diff)
+Extends default \fBSite\fP behaviour providing more information (unified diff)
 about changes in text resource.
 .INDENT 7.0
 .TP
 .B compare()
+Compares files using \fBdifflib.unified_diff\fP.
 .UNINDENT
 .UNINDENT
 .INDENT 0.0

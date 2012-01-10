@@ -332,10 +332,13 @@ class AbstractProxy(object):
 
 class TextSite(AbstractProxy):
     """
-    Extends default Site behaviour providing more information (unified diff)
+    Extends default ``Site`` behaviour providing more information (unified diff)
     about changes in text resource.
     """
     def compare(self):
+        """
+        Compares files using ``difflib.unified_diff``.
+        """
         diff = unified_diff(self.get_old_content().splitlines(),
                             self.get_new_content().splitlines(),
                             fromfile='old version',
@@ -371,6 +374,10 @@ class BinarySite(AbstractProxy):
     Extends default Site behaviour providing md5 hash check for binary files.
     """
     def parse_new_content(self, content):
+        """
+        Instead of comparing md5 hashes it will prepare new content as
+        hashes to conserve space and speedup script.
+        """
         hash = hashlib.md5(content.encode('utf-8'))
         return hash.hexdigest()
         
@@ -462,15 +469,35 @@ class NewSiteDecorator(AbstractDecorator):
     """
     def __init__(self, *args, **kwargs):
         super(NewSiteDecorator, self).__init__(*args, **kwargs)
+        self.is_new = False
         if not os.path.exists(self.subject.get_filename()):
             # there's no file, so it's new site
             # download content, save it and quit
+            self.is_new = True
             if VERBOSE:
                 sys.stdout.write('new site "%s"\n' % self.subject.get_name())
             new_content = self.subject.download_new_content()
             f = open(self.subject.get_filename(), 'w')
             f.write(new_content)
             f.close()
+
+    def download_new_content(self):
+        """
+        If it's new site returns empty string.
+        """
+        if not self.is_new:
+            self.subject.download_new_content()
+        else:
+            return ''
+    
+    def download_old_content(self):
+        """
+        If it's new site returns empty string.
+        """
+        if not self.is_new:
+            self.subject.download_old_content()
+        else:
+            return ''
 
 
 class SiteFactory(object):

@@ -139,6 +139,15 @@ hg clone https://bitbucket.org/seler/spy
 \begin{fulllineitems}
 \phantomsection\label{index:spy.BinarySite}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{BinarySite}}{\emph{*args}, \emph{**kwargs}}{}
 Extends default Site behaviour providing md5 hash check for binary files.
+\index{parse\_new\_content() (spy.BinarySite method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.BinarySite.parse_new_content}\pysiglinewithargsret{\bfcode{parse\_new\_content}}{\emph{content}}{}
+Instead of comparing md5 hashes it will prepare new content as
+hashes to conserve space and speedup script.
+
+\end{fulllineitems}
+
 
 \end{fulllineitems}
 
@@ -155,8 +164,16 @@ about changes in html resource.
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.TextSite}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{TextSite}}{\emph{*args}, \emph{**kwargs}}{}
-Extends default Site behaviour providing more information (unified diff)
+Extends default \code{Site} behaviour providing more information (unified diff)
 about changes in text resource.
+\index{compare() (spy.TextSite method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.TextSite.compare}\pysiglinewithargsret{\bfcode{compare}}{}{}
+Compares files using \code{difflib.unified\_diff}.
+
+\end{fulllineitems}
+
 
 \end{fulllineitems}
 
@@ -179,6 +196,30 @@ Provides access to content online.
 
 \end{fulllineitems}
 
+\index{NewSiteDecorator (class in spy)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.NewSiteDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{NewSiteDecorator}}{\emph{*args}, \emph{**kwargs}}{}
+Supports initial check for new sites.
+\index{download\_new\_content() (spy.NewSiteDecorator method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.NewSiteDecorator.download_new_content}\pysiglinewithargsret{\bfcode{download\_new\_content}}{}{}
+If it's new site returns empty string.
+
+\end{fulllineitems}
+
+\index{download\_old\_content() (spy.NewSiteDecorator method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.NewSiteDecorator.download_old_content}\pysiglinewithargsret{\bfcode{download\_old\_content}}{}{}
+If it's new site returns empty string.
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
 
 
 \subsection{Singleton pattern}
@@ -189,6 +230,55 @@ Provides access to content online.
 Singleton pattern.
 
 Collects, creates and sends notification emails.
+\index{configure() (spy.Mailer method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.Mailer.configure}\pysiglinewithargsret{\bfcode{configure}}{\emph{sender}, \emph{default\_recipients}, \emph{host}, \emph{port}, \emph{username}, \emph{password}, \emph{use\_tls}}{}
+Configures mailer.
+
+\end{fulllineitems}
+
+\index{get\_instance() (spy.Mailer class method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.Mailer.get_instance}\pysiglinewithargsret{\strong{classmethod }\bfcode{get\_instance}}{}{}
+Returns instance of Mailer.
+If no instance ever existed it creates one.
+
+\end{fulllineitems}
+
+\index{make\_email() (spy.Mailer method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.Mailer.make_email}\pysiglinewithargsret{\bfcode{make\_email}}{\emph{sender}, \emph{recipient}, \emph{data}}{}
+Creates and returns email message for single recipient.
+
+\end{fulllineitems}
+
+\index{make\_messages() (spy.Mailer method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.Mailer.make_messages}\pysiglinewithargsret{\bfcode{make\_messages}}{}{}
+Creates messages for all recipients.
+
+\end{fulllineitems}
+
+\index{prepare\_notification() (spy.Mailer method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.Mailer.prepare_notification}\pysiglinewithargsret{\bfcode{prepare\_notification}}{\emph{name}, \emph{diff}, \emph{location}, \emph{recipients=None}}{}
+Adds single notification about single site.
+
+\end{fulllineitems}
+
+\index{send\_messages() (spy.Mailer method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.Mailer.send_messages}\pysiglinewithargsret{\bfcode{send\_messages}}{}{}
+Sends all messages.
+
+\end{fulllineitems}
+
 
 \end{fulllineitems}
 
@@ -200,6 +290,14 @@ Collects, creates and sends notification emails.
 \begin{fulllineitems}
 \phantomsection\label{index:spy.SiteFactory}\pysigline{\strong{class }\code{spy.}\bfcode{SiteFactory}}
 Factory pattern.
+\index{get\_site() (spy.SiteFactory method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.SiteFactory.get_site}\pysiglinewithargsret{\bfcode{get\_site}}{\emph{section}}{}
+Generates \code{Site} object.
+
+\end{fulllineitems}
+
 
 \end{fulllineitems}
 
@@ -211,6 +309,14 @@ Factory pattern.
 \begin{fulllineitems}
 \phantomsection\label{index:spy.SPy}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{SPy}}{\emph{site\_slugs=None}}{}
 Facade pattern.
+\index{run() (spy.SPy method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.SPy.run}\pysiglinewithargsret{\bfcode{run}}{}{}
+Runs everything.
+
+\end{fulllineitems}
+
 
 \end{fulllineitems}
 
@@ -449,7 +555,10 @@ Extends default Site behaviour providing md5 hash check for binary files.
 \index{parse\_new\_content() (spy.BinarySite method)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.parse_new_content}\pysiglinewithargsret{\bfcode{parse\_new\_content}}{\emph{content}}{}
+\pysiglinewithargsret{\bfcode{parse\_new\_content}}{\emph{content}}{}
+Instead of comparing md5 hashes it will prepare new content as
+hashes to conserve space and speedup script.
+
 \end{fulllineitems}
 
 
@@ -492,7 +601,7 @@ Collects, creates and sends notification emails.
 \index{configure() (spy.Mailer method)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.Mailer.configure}\pysiglinewithargsret{\code{Mailer.}\bfcode{configure}}{\emph{sender}, \emph{default\_recipients}, \emph{host}, \emph{port}, \emph{username}, \emph{password}, \emph{use\_tls}}{}
+\pysiglinewithargsret{\code{Mailer.}\bfcode{configure}}{\emph{sender}, \emph{default\_recipients}, \emph{host}, \emph{port}, \emph{username}, \emph{password}, \emph{use\_tls}}{}
 Configures mailer.
 
 \end{fulllineitems}
@@ -500,7 +609,7 @@ Configures mailer.
 \index{get\_instance() (spy.Mailer class method)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.Mailer.get_instance}\pysiglinewithargsret{\strong{classmethod }\code{Mailer.}\bfcode{get\_instance}}{}{}
+\pysiglinewithargsret{\strong{classmethod }\code{Mailer.}\bfcode{get\_instance}}{}{}
 Returns instance of Mailer.
 If no instance ever existed it creates one.
 
@@ -509,7 +618,7 @@ If no instance ever existed it creates one.
 \index{make\_email() (spy.Mailer method)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.Mailer.make_email}\pysiglinewithargsret{\code{Mailer.}\bfcode{make\_email}}{\emph{sender}, \emph{recipient}, \emph{data}}{}
+\pysiglinewithargsret{\code{Mailer.}\bfcode{make\_email}}{\emph{sender}, \emph{recipient}, \emph{data}}{}
 Creates and returns email message for single recipient.
 
 \end{fulllineitems}
@@ -517,7 +626,7 @@ Creates and returns email message for single recipient.
 \index{make\_messages() (spy.Mailer method)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.Mailer.make_messages}\pysiglinewithargsret{\code{Mailer.}\bfcode{make\_messages}}{}{}
+\pysiglinewithargsret{\code{Mailer.}\bfcode{make\_messages}}{}{}
 Creates messages for all recipients.
 
 \end{fulllineitems}
@@ -525,7 +634,7 @@ Creates messages for all recipients.
 \index{prepare\_notification() (spy.Mailer method)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.Mailer.prepare_notification}\pysiglinewithargsret{\code{Mailer.}\bfcode{prepare\_notification}}{\emph{name}, \emph{diff}, \emph{location}, \emph{recipients=None}}{}
+\pysiglinewithargsret{\code{Mailer.}\bfcode{prepare\_notification}}{\emph{name}, \emph{diff}, \emph{location}, \emph{recipients=None}}{}
 Adds single notification about single site.
 
 \end{fulllineitems}
@@ -533,7 +642,7 @@ Adds single notification about single site.
 \index{send\_messages() (spy.Mailer method)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.Mailer.send_messages}\pysiglinewithargsret{\code{Mailer.}\bfcode{send\_messages}}{}{}
+\pysiglinewithargsret{\code{Mailer.}\bfcode{send\_messages}}{}{}
 Sends all messages.
 
 \end{fulllineitems}
@@ -544,13 +653,21 @@ Sends all messages.
 \index{NewSiteDecorator (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{NewSiteDecorator}}{\emph{*args}, \emph{**kwargs}}{}
+\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{NewSiteDecorator}}{\emph{*args}, \emph{**kwargs}}{}
 Supports initial check for new sites.
-\index{compare() (spy.NewSiteDecorator method)}
+\index{download\_new\_content() (spy.NewSiteDecorator method)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.compare}\pysiglinewithargsret{\bfcode{compare}}{}{}
-Nothing to compare ;)
+\pysiglinewithargsret{\bfcode{download\_new\_content}}{}{}
+If it's new site returns empty string.
+
+\end{fulllineitems}
+
+\index{download\_old\_content() (spy.NewSiteDecorator method)}
+
+\begin{fulllineitems}
+\pysiglinewithargsret{\bfcode{download\_old\_content}}{}{}
+If it's new site returns empty string.
 
 \end{fulllineitems}
 
@@ -617,7 +734,7 @@ Facade pattern.
 \index{run() (spy.SPy method)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.SPy.run}\pysiglinewithargsret{\bfcode{run}}{}{}
+\pysiglinewithargsret{\bfcode{run}}{}{}
 Runs everything.
 
 \end{fulllineitems}
@@ -765,7 +882,7 @@ Factory pattern.
 \index{get\_site() (spy.SiteFactory method)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.SiteFactory.get_site}\pysiglinewithargsret{\bfcode{get\_site}}{\emph{section}}{}
+\pysiglinewithargsret{\bfcode{get\_site}}{\emph{section}}{}
 Generates \code{Site} object.
 
 \end{fulllineitems}
@@ -777,12 +894,14 @@ Generates \code{Site} object.
 
 \begin{fulllineitems}
 \pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{TextSite}}{\emph{*args}, \emph{**kwargs}}{}
-Extends default Site behaviour providing more information (unified diff)
+Extends default \code{Site} behaviour providing more information (unified diff)
 about changes in text resource.
 \index{compare() (spy.TextSite method)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.compare}\pysiglinewithargsret{\bfcode{compare}}{}{}
+\pysiglinewithargsret{\bfcode{compare}}{}{}
+Compares files using \code{difflib.unified\_diff}.
+
 \end{fulllineitems}
 
 

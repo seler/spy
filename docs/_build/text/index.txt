@@ -32,6 +32,11 @@ class class spy.BinarySite(*args, **kwargs)
    Extends default Site behaviour providing md5 hash check for binary
    files.
 
+   parse_new_content(content)
+
+      Instead of comparing md5 hashes it will prepare new content as
+      hashes to conserve space and speedup script.
+
 class class spy.HTMLSite(*args, **kwargs)
 
    Extends default Site behaviour providing more information about
@@ -39,8 +44,12 @@ class class spy.HTMLSite(*args, **kwargs)
 
 class class spy.TextSite(*args, **kwargs)
 
-   Extends default Site behaviour providing more information (unified
-   diff) about changes in text resource.
+   Extends default "Site" behaviour providing more information
+   (unified diff) about changes in text resource.
+
+   compare()
+
+      Compares files using "difflib.unified_diff".
 
 
 Decorator pattern
@@ -54,6 +63,18 @@ class class spy.OnlineSiteDecorator(subject)
 
    Provides access to content online.
 
+class class spy.NewSiteDecorator(*args, **kwargs)
+
+   Supports initial check for new sites.
+
+   download_new_content()
+
+      If it's new site returns empty string.
+
+   download_old_content()
+
+      If it's new site returns empty string.
+
 
 Singleton pattern
 -----------------
@@ -64,6 +85,31 @@ class class spy.Mailer
 
    Collects, creates and sends notification emails.
 
+   configure(sender, default_recipients, host, port, username, password, use_tls)
+
+      Configures mailer.
+
+   classmethod get_instance()
+
+      Returns instance of Mailer. If no instance ever existed it
+      creates one.
+
+   make_email(sender, recipient, data)
+
+      Creates and returns email message for single recipient.
+
+   make_messages()
+
+      Creates messages for all recipients.
+
+   prepare_notification(name, diff, location, recipients=None)
+
+      Adds single notification about single site.
+
+   send_messages()
+
+      Sends all messages.
+
 
 Factory pattern
 ---------------
@@ -72,6 +118,10 @@ class class spy.SiteFactory
 
    Factory pattern.
 
+   get_site(section)
+
+      Generates "Site" object.
+
 
 Facade pattern
 --------------
@@ -79,6 +129,10 @@ Facade pattern
 class class spy.SPy(site_slugs=None)
 
    Facade pattern.
+
+   run()
+
+      Runs everything.
 
 
 Source code
@@ -171,6 +225,9 @@ class class spy.BinarySite(*args, **kwargs)
 
    parse_new_content(content)
 
+      Instead of comparing md5 hashes it will prepare new content as
+      hashes to conserve space and speedup script.
+
 class class spy.HTMLSite(*args, **kwargs)
 
    Extends default Site behaviour providing more information about
@@ -217,9 +274,13 @@ class class spy.NewSiteDecorator(*args, **kwargs)
 
    Supports initial check for new sites.
 
-   compare()
+   download_new_content()
 
-      Nothing to compare ;)
+      If it's new site returns empty string.
+
+   download_old_content()
+
+      If it's new site returns empty string.
 
 class class spy.OfflineSiteDecorator(subject)
 
@@ -320,10 +381,12 @@ class class spy.SiteFactory
 
 class class spy.TextSite(*args, **kwargs)
 
-   Extends default Site behaviour providing more information (unified
-   diff) about changes in text resource.
+   Extends default "Site" behaviour providing more information
+   (unified diff) about changes in text resource.
 
    compare()
+
+      Compares files using "difflib.unified_diff".
 
 spy.main()
 

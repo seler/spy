@@ -26,29 +26,44 @@ Proxy pattern
 ~~~~~~~~~~~~~
 
 .. autoclass:: spy.BinarySite
+   :members:
+
 .. autoclass:: spy.HTMLSite
+   :members:
+
 .. autoclass:: spy.TextSite
+   :members:
+
 
 Decorator pattern
 ~~~~~~~~~~~~~~~~~
 
 .. autoclass:: spy.OfflineSiteDecorator
+   :members:
+
 .. autoclass:: spy.OnlineSiteDecorator
+   :members:
+
+.. autoclass:: spy.NewSiteDecorator
+   :members:
 
 Singleton pattern
 ~~~~~~~~~~~~~~~~~
 
 .. autoclass:: spy.Mailer
+   :members:
 
 Factory pattern
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: spy.SiteFactory
+   :members:
 
 Facade pattern
 ~~~~~~~~~~~~~~
 
 .. autoclass:: spy.SPy
+   :members:
 
 Source code
 -----------
