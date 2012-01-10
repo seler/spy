@@ -15,6 +15,7 @@ Structure
 .. automodule:: spy
    :members:
    :undoc-members:
+   :private-members:
    :inherited-members:
 
 User's guide
