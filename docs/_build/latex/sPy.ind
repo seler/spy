@@ -2,133 +2,133 @@
 \def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
 
   \bigletter {Symbols}
-  \item \_Mailer\_\_instance (spy.Mailer attribute), \hyperpage{6}
+  \item \_Mailer\_\_instance (spy.Mailer attribute), \hyperpage{7}
 
   \indexspace
   \bigletter A
-  \item AbstractDecorator (class in spy), \hyperpage{5}
-  \item AbstractProxy (class in spy), \hyperpage{5}
+  \item AbstractDecorator (class in spy), \hyperpage{6}
+  \item AbstractProxy (class in spy), \hyperpage{6}
 
   \indexspace
   \bigletter B
-  \item BinarySite (class in spy), \hyperpage{6}
+  \item BinarySite (class in spy), \hyperpage{5}, \hyperpage{7}
 
   \indexspace
   \bigletter C
-  \item compare() (spy.AbstractDecorator method), \hyperpage{5}
-  \item compare() (spy.AbstractProxy method), \hyperpage{5}
-  \item compare() (spy.NewSiteDecorator method), \hyperpage{6}
-  \item compare() (spy.Site method), \hyperpage{7}
+  \item compare() (spy.AbstractDecorator method), \hyperpage{6}
+  \item compare() (spy.AbstractProxy method), \hyperpage{6}
+  \item compare() (spy.NewSiteDecorator method), \hyperpage{7}
+  \item compare() (spy.Site method), \hyperpage{8}
   \item compare() (spy.TextSite method), \hyperpage{8}
-  \item configure() (spy.Mailer method), \hyperpage{6}
+  \item configure() (spy.Mailer method), \hyperpage{7}
   \item configure() (spy.SPy method), \hyperpage{7}
 
   \indexspace
   \bigletter D
-  \item download\_new\_content() (spy.AbstractDecorator method), \hyperpage{5}
-  \item download\_new\_content() (spy.AbstractProxy method), \hyperpage{5}
+  \item download\_new\_content() (spy.AbstractDecorator method), \hyperpage{6}
+  \item download\_new\_content() (spy.AbstractProxy method), \hyperpage{6}
   \item download\_new\_content() (spy.OfflineSiteDecorator method), \hyperpage{7}
   \item download\_new\_content() (spy.OnlineSiteDecorator method), \hyperpage{7}
-  \item download\_new\_content() (spy.Site method), \hyperpage{7}
-  \item download\_old\_content() (spy.AbstractDecorator method), \hyperpage{5}
-  \item download\_old\_content() (spy.AbstractProxy method), \hyperpage{5}
-  \item download\_old\_content() (spy.Site method), \hyperpage{7}
+  \item download\_new\_content() (spy.Site method), \hyperpage{8}
+  \item download\_old\_content() (spy.AbstractDecorator method), \hyperpage{6}
+  \item download\_old\_content() (spy.AbstractProxy method), \hyperpage{6}
+  \item download\_old\_content() (spy.Site method), \hyperpage{8}
 
   \indexspace
   \bigletter G
-  \item get\_diff() (spy.AbstractDecorator method), \hyperpage{5}
-  \item get\_diff() (spy.AbstractProxy method), \hyperpage{5}
-  \item get\_diff() (spy.Site method), \hyperpage{7}
-  \item get\_filename() (spy.AbstractDecorator method), \hyperpage{5}
-  \item get\_filename() (spy.AbstractProxy method), \hyperpage{5}
-  \item get\_filename() (spy.Site method), \hyperpage{7}
-  \item get\_instance() (spy.Mailer class method), \hyperpage{6}
-  \item get\_location() (spy.AbstractDecorator method), \hyperpage{5}
+  \item get\_diff() (spy.AbstractDecorator method), \hyperpage{6}
+  \item get\_diff() (spy.AbstractProxy method), \hyperpage{6}
+  \item get\_diff() (spy.Site method), \hyperpage{8}
+  \item get\_filename() (spy.AbstractDecorator method), \hyperpage{6}
+  \item get\_filename() (spy.AbstractProxy method), \hyperpage{6}
+  \item get\_filename() (spy.Site method), \hyperpage{8}
+  \item get\_instance() (spy.Mailer class method), \hyperpage{7}
+  \item get\_location() (spy.AbstractDecorator method), \hyperpage{6}
   \item get\_location() (spy.AbstractProxy method), \hyperpage{6}
-  \item get\_location() (spy.Site method), \hyperpage{7}
-  \item get\_name() (spy.AbstractDecorator method), \hyperpage{5}
+  \item get\_location() (spy.Site method), \hyperpage{8}
+  \item get\_name() (spy.AbstractDecorator method), \hyperpage{6}
   \item get\_name() (spy.AbstractProxy method), \hyperpage{6}
-  \item get\_name() (spy.Site method), \hyperpage{7}
-  \item get\_new\_content() (spy.AbstractDecorator method), \hyperpage{5}
+  \item get\_name() (spy.Site method), \hyperpage{8}
+  \item get\_new\_content() (spy.AbstractDecorator method), \hyperpage{6}
   \item get\_new\_content() (spy.AbstractProxy method), \hyperpage{6}
-  \item get\_new\_content() (spy.Site method), \hyperpage{7}
-  \item get\_old\_content() (spy.AbstractDecorator method), \hyperpage{5}
+  \item get\_new\_content() (spy.Site method), \hyperpage{8}
+  \item get\_old\_content() (spy.AbstractDecorator method), \hyperpage{6}
   \item get\_old\_content() (spy.AbstractProxy method), \hyperpage{6}
-  \item get\_old\_content() (spy.Site method), \hyperpage{7}
+  \item get\_old\_content() (spy.Site method), \hyperpage{8}
   \item get\_site() (spy.SiteFactory method), \hyperpage{8}
   \item get\_sites() (spy.SPy method), \hyperpage{7}
 
   \indexspace
   \bigletter H
-  \item has\_changed() (spy.AbstractDecorator method), \hyperpage{5}
+  \item has\_changed() (spy.AbstractDecorator method), \hyperpage{6}
   \item has\_changed() (spy.AbstractProxy method), \hyperpage{6}
-  \item has\_changed() (spy.Site method), \hyperpage{7}
-  \item HTMLSite (class in spy), \hyperpage{6}
+  \item has\_changed() (spy.Site method), \hyperpage{8}
+  \item HTMLSite (class in spy), \hyperpage{5}, \hyperpage{7}
 
   \indexspace
   \bigletter I
-  \item ImproperlyConfigured, \hyperpage{6}
-  \item initialize\_mailer() (spy.SPy method), \hyperpage{7}
+  \item ImproperlyConfigured, \hyperpage{7}
+  \item initialize\_mailer() (spy.SPy method), \hyperpage{8}
 
   \indexspace
   \bigletter M
-  \item Mailer (class in spy), \hyperpage{6}
-  \item Mailer.NotSingle, \hyperpage{6}
-  \item main() (in module spy), \hyperpage{8}
-  \item make\_email() (spy.Mailer method), \hyperpage{6}
-  \item make\_messages() (spy.Mailer method), \hyperpage{6}
+  \item Mailer (class in spy), \hyperpage{5}, \hyperpage{7}
+  \item Mailer.NotSingle, \hyperpage{7}
+  \item main() (in module spy), \hyperpage{9}
+  \item make\_email() (spy.Mailer method), \hyperpage{7}
+  \item make\_messages() (spy.Mailer method), \hyperpage{7}
 
   \indexspace
   \bigletter N
-  \item NewSiteDecorator (class in spy), \hyperpage{6}
-  \item notify() (spy.AbstractDecorator method), \hyperpage{5}
+  \item NewSiteDecorator (class in spy), \hyperpage{7}
+  \item notify() (spy.AbstractDecorator method), \hyperpage{6}
   \item notify() (spy.AbstractProxy method), \hyperpage{6}
-  \item notify() (spy.SPy method), \hyperpage{7}
+  \item notify() (spy.SPy method), \hyperpage{8}
 
   \indexspace
   \bigletter O
-  \item OfflineSiteDecorator (class in spy), \hyperpage{6}
-  \item OnlineSiteDecorator (class in spy), \hyperpage{7}
+  \item OfflineSiteDecorator (class in spy), \hyperpage{5}, \hyperpage{7}
+  \item OnlineSiteDecorator (class in spy), \hyperpage{5}, \hyperpage{7}
 
   \indexspace
   \bigletter P
-  \item parse\_new\_content() (spy.AbstractDecorator method), \hyperpage{5}
+  \item parse\_new\_content() (spy.AbstractDecorator method), \hyperpage{6}
   \item parse\_new\_content() (spy.AbstractProxy method), \hyperpage{6}
-  \item parse\_new\_content() (spy.BinarySite method), \hyperpage{6}
-  \item parse\_new\_content() (spy.Site method), \hyperpage{7}
-  \item prepare\_notification() (spy.AbstractDecorator method), \hyperpage{5}
+  \item parse\_new\_content() (spy.BinarySite method), \hyperpage{7}
+  \item parse\_new\_content() (spy.Site method), \hyperpage{8}
+  \item prepare\_notification() (spy.AbstractDecorator method), \hyperpage{6}
   \item prepare\_notification() (spy.AbstractProxy method), \hyperpage{6}
-  \item prepare\_notification() (spy.Mailer method), \hyperpage{6}
-  \item prepare\_notification() (spy.Site method), \hyperpage{7}
+  \item prepare\_notification() (spy.Mailer method), \hyperpage{7}
+  \item prepare\_notification() (spy.Site method), \hyperpage{8}
 
   \indexspace
   \bigletter R
-  \item run() (spy.SPy method), \hyperpage{7}
+  \item run() (spy.SPy method), \hyperpage{8}
 
   \indexspace
   \bigletter S
-  \item save\_new\_content() (spy.AbstractDecorator method), \hyperpage{5}
-  \item save\_new\_content() (spy.AbstractProxy method), \hyperpage{6}
-  \item save\_new\_content() (spy.Site method), \hyperpage{7}
-  \item send\_messages() (spy.Mailer method), \hyperpage{6}
-  \item set\_diff() (spy.AbstractDecorator method), \hyperpage{5}
-  \item set\_diff() (spy.AbstractProxy method), \hyperpage{6}
-  \item set\_diff() (spy.Site method), \hyperpage{7}
-  \item set\_new\_content() (spy.AbstractDecorator method), \hyperpage{5}
-  \item set\_new\_content() (spy.AbstractProxy method), \hyperpage{6}
-  \item set\_new\_content() (spy.Site method), \hyperpage{7}
-  \item set\_old\_content() (spy.AbstractDecorator method), \hyperpage{5}
-  \item set\_old\_content() (spy.AbstractProxy method), \hyperpage{6}
+  \item save\_new\_content() (spy.AbstractDecorator method), \hyperpage{6}
+  \item save\_new\_content() (spy.AbstractProxy method), \hyperpage{7}
+  \item save\_new\_content() (spy.Site method), \hyperpage{8}
+  \item send\_messages() (spy.Mailer method), \hyperpage{7}
+  \item set\_diff() (spy.AbstractDecorator method), \hyperpage{6}
+  \item set\_diff() (spy.AbstractProxy method), \hyperpage{7}
+  \item set\_diff() (spy.Site method), \hyperpage{8}
+  \item set\_new\_content() (spy.AbstractDecorator method), \hyperpage{6}
+  \item set\_new\_content() (spy.AbstractProxy method), \hyperpage{7}
+  \item set\_new\_content() (spy.Site method), \hyperpage{8}
+  \item set\_old\_content() (spy.AbstractDecorator method), \hyperpage{6}
+  \item set\_old\_content() (spy.AbstractProxy method), \hyperpage{7}
   \item set\_old\_content() (spy.Site method), \hyperpage{8}
-  \item Site (class in spy), \hyperpage{7}
-  \item SiteFactory (class in spy), \hyperpage{8}
-  \item slugify() (in module spy), \hyperpage{8}
-  \item SPy (class in spy), \hyperpage{7}
-  \item spy (module), \hyperpage{5}
-  \item spy() (spy.SPy method), \hyperpage{7}
+  \item Site (class in spy), \hyperpage{8}
+  \item SiteFactory (class in spy), \hyperpage{5}, \hyperpage{8}
+  \item slugify() (in module spy), \hyperpage{9}
+  \item SPy (class in spy), \hyperpage{5}, \hyperpage{7}
+  \item spy (module), \hyperpage{6}
+  \item spy() (spy.SPy method), \hyperpage{8}
 
   \indexspace
   \bigletter T
-  \item TextSite (class in spy), \hyperpage{8}
+  \item TextSite (class in spy), \hyperpage{5}, \hyperpage{8}
 
 \end{theindex}

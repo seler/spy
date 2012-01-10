@@ -51,8 +51,79 @@ After detecting changes it sends emails notyfying about differences.</p>
 <div class="highlight-python"><pre>hg clone https://bitbucket.org/seler/spy</pre>
 </div>
 </div>
+<div class="section" id="structure">
+<h1>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="design-patterns">
+<h2>Design patterns<a class="headerlink" href="#design-patterns" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="proxy-pattern">
+<h3>Proxy pattern<a class="headerlink" href="#proxy-pattern" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="spy.BinarySite">
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">BinarySite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#spy.BinarySite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extends default Site behaviour providing md5 hash check for binary files.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="spy.HTMLSite">
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">HTMLSite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#spy.HTMLSite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extends default Site behaviour providing more information
+about changes in html resource.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="spy.TextSite">
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">TextSite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#spy.TextSite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extends default Site behaviour providing more information (unified diff)
+about changes in text resource.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="decorator-pattern">
+<h3>Decorator pattern<a class="headerlink" href="#decorator-pattern" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="spy.OfflineSiteDecorator">
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">OfflineSiteDecorator</tt><big>(</big><em>subject</em><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to content offline.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="spy.OnlineSiteDecorator">
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">OnlineSiteDecorator</tt><big>(</big><em>subject</em><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to content online.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="singleton-pattern">
+<h3>Singleton pattern<a class="headerlink" href="#singleton-pattern" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="spy.Mailer">
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">Mailer</tt><a class="headerlink" href="#spy.Mailer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Singleton pattern.</p>
+<p>Collects, creates and sends notification emails.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="factory-pattern">
+<h3>Factory pattern<a class="headerlink" href="#factory-pattern" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="spy.SiteFactory">
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">SiteFactory</tt><a class="headerlink" href="#spy.SiteFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Factory pattern.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="facade-pattern">
+<h3>Facade pattern<a class="headerlink" href="#facade-pattern" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="spy.SPy">
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">SPy</tt><big>(</big><em>site_slugs=None</em><big>)</big><a class="headerlink" href="#spy.SPy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Facade pattern.</p>
+</dd></dl>
+
+</div>
+</div>
 <div class="section" id="module-spy">
-<span id="structure"></span><h1>Structure<a class="headerlink" href="#module-spy" title="Permalink to this headline">¶</a></h1>
+<span id="source-code"></span><h2>Source code<a class="headerlink" href="#module-spy" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="spy.AbstractDecorator">
 <em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">AbstractDecorator</tt><big>(</big><em>subject</em><big>)</big><a class="headerlink" href="#spy.AbstractDecorator" title="Permalink to this definition">¶</a></dt>
@@ -238,8 +309,8 @@ After detecting changes it sends emails notyfying about differences.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="spy.BinarySite">
-<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">BinarySite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#spy.BinarySite" title="Permalink to this definition">¶</a></dt>
+<dt>
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">BinarySite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
 <dd><p>Extends default Site behaviour providing md5 hash check for binary files.</p>
 <dl class="method">
 <dt id="spy.BinarySite.parse_new_content">
@@ -249,8 +320,8 @@ After detecting changes it sends emails notyfying about differences.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="spy.HTMLSite">
-<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">HTMLSite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#spy.HTMLSite" title="Permalink to this definition">¶</a></dt>
+<dt>
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">HTMLSite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
 <dd><p>Extends default Site behaviour providing more information
 about changes in html resource.</p>
 </dd></dl>
@@ -261,8 +332,8 @@ about changes in html resource.</p>
 <dd></dd></dl>
 
 <dl class="class">
-<dt id="spy.Mailer">
-<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">Mailer</tt><a class="headerlink" href="#spy.Mailer" title="Permalink to this definition">¶</a></dt>
+<dt>
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">Mailer</tt></dt>
 <dd><p>Singleton pattern.</p>
 <p>Collects, creates and sends notification emails.</p>
 <dl class="exception">
@@ -327,8 +398,8 @@ If no instance ever existed it creates one.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="spy.OfflineSiteDecorator">
-<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">OfflineSiteDecorator</tt><big>(</big><em>subject</em><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator" title="Permalink to this definition">¶</a></dt>
+<dt>
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">OfflineSiteDecorator</tt><big>(</big><em>subject</em><big>)</big></dt>
 <dd><p>Provides access to content offline.</p>
 <dl class="method">
 <dt id="spy.OfflineSiteDecorator.download_new_content">
@@ -338,8 +409,8 @@ If no instance ever existed it creates one.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="spy.OnlineSiteDecorator">
-<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">OnlineSiteDecorator</tt><big>(</big><em>subject</em><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator" title="Permalink to this definition">¶</a></dt>
+<dt>
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">OnlineSiteDecorator</tt><big>(</big><em>subject</em><big>)</big></dt>
 <dd><p>Provides access to content online.</p>
 <dl class="method">
 <dt id="spy.OnlineSiteDecorator.download_new_content">
@@ -349,8 +420,8 @@ If no instance ever existed it creates one.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="spy.SPy">
-<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">SPy</tt><big>(</big><em>site_slugs=None</em><big>)</big><a class="headerlink" href="#spy.SPy" title="Permalink to this definition">¶</a></dt>
+<dt>
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">SPy</tt><big>(</big><em>site_slugs=None</em><big>)</big></dt>
 <dd><p>Facade pattern.</p>
 <dl class="method">
 <dt id="spy.SPy.configure">
@@ -483,8 +554,8 @@ If no instance ever existed it creates one.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="spy.SiteFactory">
-<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">SiteFactory</tt><a class="headerlink" href="#spy.SiteFactory" title="Permalink to this definition">¶</a></dt>
+<dt>
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">SiteFactory</tt></dt>
 <dd><p>Factory pattern.</p>
 <dl class="method">
 <dt id="spy.SiteFactory.get_site">
@@ -495,8 +566,8 @@ If no instance ever existed it creates one.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="spy.TextSite">
-<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">TextSite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#spy.TextSite" title="Permalink to this definition">¶</a></dt>
+<dt>
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">TextSite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
 <dd><p>Extends default Site behaviour providing more information (unified diff)
 about changes in text resource.</p>
 <dl class="method">
@@ -519,6 +590,7 @@ about changes in text resource.</p>
 and converts spaces to hyphens.</p>
 </dd></dl>
 
+</div>
 </div>
 <div class="section" id="user-s-guide">
 <h1>User&#8217;s guide<a class="headerlink" href="#user-s-guide" title="Permalink to this headline">¶</a></h1>

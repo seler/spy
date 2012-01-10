@@ -128,7 +128,96 @@ hg clone https://bitbucket.org/seler/spy
 
 
 \chapter{Structure}
-\label{index:structure}\label{index:module-spy}\index{spy (module)}\index{AbstractDecorator (class in spy)}
+\label{index:structure}
+
+\section{Design patterns}
+\label{index:design-patterns}
+
+\subsection{Proxy pattern}
+\label{index:proxy-pattern}\index{BinarySite (class in spy)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.BinarySite}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{BinarySite}}{\emph{*args}, \emph{**kwargs}}{}
+Extends default Site behaviour providing md5 hash check for binary files.
+
+\end{fulllineitems}
+
+\index{HTMLSite (class in spy)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.HTMLSite}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{HTMLSite}}{\emph{*args}, \emph{**kwargs}}{}
+Extends default Site behaviour providing more information
+about changes in html resource.
+
+\end{fulllineitems}
+
+\index{TextSite (class in spy)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.TextSite}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{TextSite}}{\emph{*args}, \emph{**kwargs}}{}
+Extends default Site behaviour providing more information (unified diff)
+about changes in text resource.
+
+\end{fulllineitems}
+
+
+
+\subsection{Decorator pattern}
+\label{index:decorator-pattern}\index{OfflineSiteDecorator (class in spy)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.OfflineSiteDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{OfflineSiteDecorator}}{\emph{subject}}{}
+Provides access to content offline.
+
+\end{fulllineitems}
+
+\index{OnlineSiteDecorator (class in spy)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.OnlineSiteDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{OnlineSiteDecorator}}{\emph{subject}}{}
+Provides access to content online.
+
+\end{fulllineitems}
+
+
+
+\subsection{Singleton pattern}
+\label{index:singleton-pattern}\index{Mailer (class in spy)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.Mailer}\pysigline{\strong{class }\code{spy.}\bfcode{Mailer}}
+Singleton pattern.
+
+Collects, creates and sends notification emails.
+
+\end{fulllineitems}
+
+
+
+\subsection{Factory pattern}
+\label{index:factory-pattern}\index{SiteFactory (class in spy)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.SiteFactory}\pysigline{\strong{class }\code{spy.}\bfcode{SiteFactory}}
+Factory pattern.
+
+\end{fulllineitems}
+
+
+
+\subsection{Facade pattern}
+\label{index:facade-pattern}\index{SPy (class in spy)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.SPy}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{SPy}}{\emph{site\_slugs=None}}{}
+Facade pattern.
+
+\end{fulllineitems}
+
+
+
+\section{Source code}
+\label{index:source-code}\label{index:module-spy}\index{spy (module)}\index{AbstractDecorator (class in spy)}
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.AbstractDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{AbstractDecorator}}{\emph{subject}}{}
@@ -355,7 +444,7 @@ Default proxy interface to \code{Site}.
 \index{BinarySite (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{BinarySite}}{\emph{*args}, \emph{**kwargs}}{}
+\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{BinarySite}}{\emph{*args}, \emph{**kwargs}}{}
 Extends default Site behaviour providing md5 hash check for binary files.
 \index{parse\_new\_content() (spy.BinarySite method)}
 
@@ -369,7 +458,7 @@ Extends default Site behaviour providing md5 hash check for binary files.
 \index{HTMLSite (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{HTMLSite}}{\emph{*args}, \emph{**kwargs}}{}
+\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{HTMLSite}}{\emph{*args}, \emph{**kwargs}}{}
 Extends default Site behaviour providing more information
 about changes in html resource.
 
@@ -384,7 +473,7 @@ about changes in html resource.
 \index{Mailer (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.Mailer}\pysigline{\strong{class }\code{spy.}\bfcode{Mailer}}
+\pysigline{\strong{class }\code{spy.}\bfcode{Mailer}}
 Singleton pattern.
 
 Collects, creates and sends notification emails.
@@ -471,7 +560,7 @@ Nothing to compare ;)
 \index{OfflineSiteDecorator (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{OfflineSiteDecorator}}{\emph{subject}}{}
+\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{OfflineSiteDecorator}}{\emph{subject}}{}
 Provides access to content offline.
 \index{download\_new\_content() (spy.OfflineSiteDecorator method)}
 
@@ -485,7 +574,7 @@ Provides access to content offline.
 \index{OnlineSiteDecorator (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{OnlineSiteDecorator}}{\emph{subject}}{}
+\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{OnlineSiteDecorator}}{\emph{subject}}{}
 Provides access to content online.
 \index{download\_new\_content() (spy.OnlineSiteDecorator method)}
 
@@ -499,7 +588,7 @@ Provides access to content online.
 \index{SPy (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.SPy}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{SPy}}{\emph{site\_slugs=None}}{}
+\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{SPy}}{\emph{site\_slugs=None}}{}
 Facade pattern.
 \index{configure() (spy.SPy method)}
 
@@ -671,7 +760,7 @@ Sets old content from \emph{value}.
 \index{SiteFactory (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.SiteFactory}\pysigline{\strong{class }\code{spy.}\bfcode{SiteFactory}}
+\pysigline{\strong{class }\code{spy.}\bfcode{SiteFactory}}
 Factory pattern.
 \index{get\_site() (spy.SiteFactory method)}
 
@@ -687,7 +776,7 @@ Generates \code{Site} object.
 \index{TextSite (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{TextSite}}{\emph{*args}, \emph{**kwargs}}{}
+\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{TextSite}}{\emph{*args}, \emph{**kwargs}}{}
 Extends default Site behaviour providing more information (unified diff)
 about changes in text resource.
 \index{compare() (spy.TextSite method)}

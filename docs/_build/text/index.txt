@@ -19,6 +19,71 @@ latest code run:
 Structure
 *********
 
+
+Design patterns
+===============
+
+
+Proxy pattern
+-------------
+
+class class spy.BinarySite(*args, **kwargs)
+
+   Extends default Site behaviour providing md5 hash check for binary
+   files.
+
+class class spy.HTMLSite(*args, **kwargs)
+
+   Extends default Site behaviour providing more information about
+   changes in html resource.
+
+class class spy.TextSite(*args, **kwargs)
+
+   Extends default Site behaviour providing more information (unified
+   diff) about changes in text resource.
+
+
+Decorator pattern
+-----------------
+
+class class spy.OfflineSiteDecorator(subject)
+
+   Provides access to content offline.
+
+class class spy.OnlineSiteDecorator(subject)
+
+   Provides access to content online.
+
+
+Singleton pattern
+-----------------
+
+class class spy.Mailer
+
+   Singleton pattern.
+
+   Collects, creates and sends notification emails.
+
+
+Factory pattern
+---------------
+
+class class spy.SiteFactory
+
+   Factory pattern.
+
+
+Facade pattern
+--------------
+
+class class spy.SPy(site_slugs=None)
+
+   Facade pattern.
+
+
+Source code
+===========
+
 class class spy.AbstractDecorator(subject)
 
    Decorator pattern.

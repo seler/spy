@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.10)  10 JAN 2012 12:03
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.10)  10 JAN 2012 12:28
 entering extended mode
  %&-line parsing enabled.
 **sPy.tex
@@ -892,32 +892,32 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 
 ]
 Chapter 2.
-LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 134.
-[5] [6] [7] [8]
-Chapter 3.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 729.
-[9
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 136.
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 140.
+[5] [6] [7] [8] [9] [10
 
-] [10]
+]
+Chapter 3.
+[11] [12]
 Chapter 4.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 782.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 871.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [11
+) [13
 
-] [12
+] [14
 
 ]
 Chapter 5.
-[13] [14
+[15] [16
 
-] [15
+] [17
 
 
-] (./sPy.ind [16
+] (./sPy.ind [18
 
 
 ]
@@ -940,19 +940,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--34
 []\T1/ptm/m/n/10 download_old_content() (spy.AbstractDecorator
  []
 
-[17
+[19
 
-] [18
+] [20
 
 ]) (./sPy.aux) ) 
 Here is how much of TeX's memory you used:
- 8113 strings out of 493848
- 110784 string characters out of 1152823
- 199013 words of memory out of 3000000
- 11074 multiletter control sequences out of 15000+50000
+ 8131 strings out of 493848
+ 111084 string characters out of 1152823
+ 199744 words of memory out of 3000000
+ 11083 multiletter control sequences out of 15000+50000
  56831 words of font info for 64 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 45i,12n,45p,293b,458s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,12n,45p,293b,456s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/sha
 re/texmf-texlive/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texmf-texlive/f
 onts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/hel
@@ -961,9 +961,9 @@ vetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvbo8a.pfb
 f-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type
 1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on sPy.pdf (22 pages, 154588 bytes).
+Output written on sPy.pdf (24 pages, 159817 bytes).
 PDF statistics:
- 378 PDF objects out of 1000 (max. 8388607)
- 119 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 411 PDF objects out of 1000 (max. 8388607)
+ 128 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

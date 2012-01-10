@@ -41,6 +41,57 @@ Source is available as mercurial repository at bitbucket. To download latest cod
 hg clone https://bitbucket.org/seler/spy
 .ft P
 .fi
+.SH DESIGN PATTERNS
+.SS Proxy pattern
+.INDENT 0.0
+.TP
+.B class spy.BinarySite(*args, **kwargs)
+Extends default Site behaviour providing md5 hash check for binary files.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.HTMLSite(*args, **kwargs)
+Extends default Site behaviour providing more information
+about changes in html resource.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.TextSite(*args, **kwargs)
+Extends default Site behaviour providing more information (unified diff)
+about changes in text resource.
+.UNINDENT
+.SS Decorator pattern
+.INDENT 0.0
+.TP
+.B class spy.OfflineSiteDecorator(subject)
+Provides access to content offline.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.OnlineSiteDecorator(subject)
+Provides access to content online.
+.UNINDENT
+.SS Singleton pattern
+.INDENT 0.0
+.TP
+.B class spy.Mailer
+Singleton pattern.
+.sp
+Collects, creates and sends notification emails.
+.UNINDENT
+.SS Factory pattern
+.INDENT 0.0
+.TP
+.B class spy.SiteFactory
+Factory pattern.
+.UNINDENT
+.SS Facade pattern
+.INDENT 0.0
+.TP
+.B class spy.SPy(site_slugs=None)
+Facade pattern.
+.UNINDENT
+.SH SOURCE CODE
 .INDENT 0.0
 .TP
 .B class spy.AbstractDecorator(subject)

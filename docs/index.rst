@@ -19,6 +19,40 @@ Source is available as mercurial repository at bitbucket. To download latest cod
 Structure
 =========
 
+Design patterns
+---------------
+
+Proxy pattern
+~~~~~~~~~~~~~
+
+.. autoclass:: spy.BinarySite
+.. autoclass:: spy.HTMLSite
+.. autoclass:: spy.TextSite
+
+Decorator pattern
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: spy.OfflineSiteDecorator
+.. autoclass:: spy.OnlineSiteDecorator
+
+Singleton pattern
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: spy.Mailer
+
+Factory pattern
+~~~~~~~~~~~~~~~
+
+.. autoclass:: spy.SiteFactory
+
+Facade pattern
+~~~~~~~~~~~~~~
+
+.. autoclass:: spy.SPy
+
+Source code
+-----------
+
 .. automodule:: spy
    :members:
    :undoc-members:

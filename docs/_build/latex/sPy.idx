@@ -1,28 +1,36 @@
-\indexentry{spy (module)|hyperpage}{5}
-\indexentry{AbstractDecorator (class in spy)|hyperpage}{5}
-\indexentry{compare() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{download\_new\_content() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{download\_old\_content() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{get\_diff() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{get\_filename() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{get\_location() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{get\_name() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{get\_new\_content() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{get\_old\_content() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{has\_changed() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{notify() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{parse\_new\_content() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{prepare\_notification() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{save\_new\_content() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{set\_diff() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{set\_new\_content() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{set\_old\_content() (spy.AbstractDecorator method)|hyperpage}{5}
-\indexentry{AbstractProxy (class in spy)|hyperpage}{5}
-\indexentry{compare() (spy.AbstractProxy method)|hyperpage}{5}
-\indexentry{download\_new\_content() (spy.AbstractProxy method)|hyperpage}{5}
-\indexentry{download\_old\_content() (spy.AbstractProxy method)|hyperpage}{5}
-\indexentry{get\_diff() (spy.AbstractProxy method)|hyperpage}{5}
-\indexentry{get\_filename() (spy.AbstractProxy method)|hyperpage}{5}
+\indexentry{BinarySite (class in spy)|hyperpage}{5}
+\indexentry{HTMLSite (class in spy)|hyperpage}{5}
+\indexentry{TextSite (class in spy)|hyperpage}{5}
+\indexentry{OfflineSiteDecorator (class in spy)|hyperpage}{5}
+\indexentry{OnlineSiteDecorator (class in spy)|hyperpage}{5}
+\indexentry{Mailer (class in spy)|hyperpage}{5}
+\indexentry{SiteFactory (class in spy)|hyperpage}{5}
+\indexentry{SPy (class in spy)|hyperpage}{5}
+\indexentry{spy (module)|hyperpage}{6}
+\indexentry{AbstractDecorator (class in spy)|hyperpage}{6}
+\indexentry{compare() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{download\_new\_content() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{download\_old\_content() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{get\_diff() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{get\_filename() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{get\_location() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{get\_name() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{get\_new\_content() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{get\_old\_content() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{has\_changed() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{notify() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{parse\_new\_content() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{prepare\_notification() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{save\_new\_content() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{set\_diff() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{set\_new\_content() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{set\_old\_content() (spy.AbstractDecorator method)|hyperpage}{6}
+\indexentry{AbstractProxy (class in spy)|hyperpage}{6}
+\indexentry{compare() (spy.AbstractProxy method)|hyperpage}{6}
+\indexentry{download\_new\_content() (spy.AbstractProxy method)|hyperpage}{6}
+\indexentry{download\_old\_content() (spy.AbstractProxy method)|hyperpage}{6}
+\indexentry{get\_diff() (spy.AbstractProxy method)|hyperpage}{6}
+\indexentry{get\_filename() (spy.AbstractProxy method)|hyperpage}{6}
 \indexentry{get\_location() (spy.AbstractProxy method)|hyperpage}{6}
 \indexentry{get\_name() (spy.AbstractProxy method)|hyperpage}{6}
 \indexentry{get\_new\_content() (spy.AbstractProxy method)|hyperpage}{6}
@@ -31,56 +39,56 @@
 \indexentry{notify() (spy.AbstractProxy method)|hyperpage}{6}
 \indexentry{parse\_new\_content() (spy.AbstractProxy method)|hyperpage}{6}
 \indexentry{prepare\_notification() (spy.AbstractProxy method)|hyperpage}{6}
-\indexentry{save\_new\_content() (spy.AbstractProxy method)|hyperpage}{6}
-\indexentry{set\_diff() (spy.AbstractProxy method)|hyperpage}{6}
-\indexentry{set\_new\_content() (spy.AbstractProxy method)|hyperpage}{6}
-\indexentry{set\_old\_content() (spy.AbstractProxy method)|hyperpage}{6}
-\indexentry{BinarySite (class in spy)|hyperpage}{6}
-\indexentry{parse\_new\_content() (spy.BinarySite method)|hyperpage}{6}
-\indexentry{HTMLSite (class in spy)|hyperpage}{6}
-\indexentry{ImproperlyConfigured|hyperpage}{6}
-\indexentry{Mailer (class in spy)|hyperpage}{6}
-\indexentry{Mailer.NotSingle|hyperpage}{6}
-\indexentry{\_Mailer\_\_instance (spy.Mailer attribute)|hyperpage}{6}
-\indexentry{configure() (spy.Mailer method)|hyperpage}{6}
-\indexentry{get\_instance() (spy.Mailer class method)|hyperpage}{6}
-\indexentry{make\_email() (spy.Mailer method)|hyperpage}{6}
-\indexentry{make\_messages() (spy.Mailer method)|hyperpage}{6}
-\indexentry{prepare\_notification() (spy.Mailer method)|hyperpage}{6}
-\indexentry{send\_messages() (spy.Mailer method)|hyperpage}{6}
-\indexentry{NewSiteDecorator (class in spy)|hyperpage}{6}
-\indexentry{compare() (spy.NewSiteDecorator method)|hyperpage}{6}
-\indexentry{OfflineSiteDecorator (class in spy)|hyperpage}{6}
+\indexentry{save\_new\_content() (spy.AbstractProxy method)|hyperpage}{7}
+\indexentry{set\_diff() (spy.AbstractProxy method)|hyperpage}{7}
+\indexentry{set\_new\_content() (spy.AbstractProxy method)|hyperpage}{7}
+\indexentry{set\_old\_content() (spy.AbstractProxy method)|hyperpage}{7}
+\indexentry{BinarySite (class in spy)|hyperpage}{7}
+\indexentry{parse\_new\_content() (spy.BinarySite method)|hyperpage}{7}
+\indexentry{HTMLSite (class in spy)|hyperpage}{7}
+\indexentry{ImproperlyConfigured|hyperpage}{7}
+\indexentry{Mailer (class in spy)|hyperpage}{7}
+\indexentry{Mailer.NotSingle|hyperpage}{7}
+\indexentry{\_Mailer\_\_instance (spy.Mailer attribute)|hyperpage}{7}
+\indexentry{configure() (spy.Mailer method)|hyperpage}{7}
+\indexentry{get\_instance() (spy.Mailer class method)|hyperpage}{7}
+\indexentry{make\_email() (spy.Mailer method)|hyperpage}{7}
+\indexentry{make\_messages() (spy.Mailer method)|hyperpage}{7}
+\indexentry{prepare\_notification() (spy.Mailer method)|hyperpage}{7}
+\indexentry{send\_messages() (spy.Mailer method)|hyperpage}{7}
+\indexentry{NewSiteDecorator (class in spy)|hyperpage}{7}
+\indexentry{compare() (spy.NewSiteDecorator method)|hyperpage}{7}
+\indexentry{OfflineSiteDecorator (class in spy)|hyperpage}{7}
 \indexentry{download\_new\_content() (spy.OfflineSiteDecorator method)|hyperpage}{7}
 \indexentry{OnlineSiteDecorator (class in spy)|hyperpage}{7}
 \indexentry{download\_new\_content() (spy.OnlineSiteDecorator method)|hyperpage}{7}
 \indexentry{SPy (class in spy)|hyperpage}{7}
 \indexentry{configure() (spy.SPy method)|hyperpage}{7}
 \indexentry{get\_sites() (spy.SPy method)|hyperpage}{7}
-\indexentry{initialize\_mailer() (spy.SPy method)|hyperpage}{7}
-\indexentry{notify() (spy.SPy method)|hyperpage}{7}
-\indexentry{run() (spy.SPy method)|hyperpage}{7}
-\indexentry{spy() (spy.SPy method)|hyperpage}{7}
-\indexentry{Site (class in spy)|hyperpage}{7}
-\indexentry{compare() (spy.Site method)|hyperpage}{7}
-\indexentry{download\_new\_content() (spy.Site method)|hyperpage}{7}
-\indexentry{download\_old\_content() (spy.Site method)|hyperpage}{7}
-\indexentry{get\_diff() (spy.Site method)|hyperpage}{7}
-\indexentry{get\_filename() (spy.Site method)|hyperpage}{7}
-\indexentry{get\_location() (spy.Site method)|hyperpage}{7}
-\indexentry{get\_name() (spy.Site method)|hyperpage}{7}
-\indexentry{get\_new\_content() (spy.Site method)|hyperpage}{7}
-\indexentry{get\_old\_content() (spy.Site method)|hyperpage}{7}
-\indexentry{has\_changed() (spy.Site method)|hyperpage}{7}
-\indexentry{parse\_new\_content() (spy.Site method)|hyperpage}{7}
-\indexentry{prepare\_notification() (spy.Site method)|hyperpage}{7}
-\indexentry{save\_new\_content() (spy.Site method)|hyperpage}{7}
-\indexentry{set\_diff() (spy.Site method)|hyperpage}{7}
-\indexentry{set\_new\_content() (spy.Site method)|hyperpage}{7}
+\indexentry{initialize\_mailer() (spy.SPy method)|hyperpage}{8}
+\indexentry{notify() (spy.SPy method)|hyperpage}{8}
+\indexentry{run() (spy.SPy method)|hyperpage}{8}
+\indexentry{spy() (spy.SPy method)|hyperpage}{8}
+\indexentry{Site (class in spy)|hyperpage}{8}
+\indexentry{compare() (spy.Site method)|hyperpage}{8}
+\indexentry{download\_new\_content() (spy.Site method)|hyperpage}{8}
+\indexentry{download\_old\_content() (spy.Site method)|hyperpage}{8}
+\indexentry{get\_diff() (spy.Site method)|hyperpage}{8}
+\indexentry{get\_filename() (spy.Site method)|hyperpage}{8}
+\indexentry{get\_location() (spy.Site method)|hyperpage}{8}
+\indexentry{get\_name() (spy.Site method)|hyperpage}{8}
+\indexentry{get\_new\_content() (spy.Site method)|hyperpage}{8}
+\indexentry{get\_old\_content() (spy.Site method)|hyperpage}{8}
+\indexentry{has\_changed() (spy.Site method)|hyperpage}{8}
+\indexentry{parse\_new\_content() (spy.Site method)|hyperpage}{8}
+\indexentry{prepare\_notification() (spy.Site method)|hyperpage}{8}
+\indexentry{save\_new\_content() (spy.Site method)|hyperpage}{8}
+\indexentry{set\_diff() (spy.Site method)|hyperpage}{8}
+\indexentry{set\_new\_content() (spy.Site method)|hyperpage}{8}
 \indexentry{set\_old\_content() (spy.Site method)|hyperpage}{8}
 \indexentry{SiteFactory (class in spy)|hyperpage}{8}
 \indexentry{get\_site() (spy.SiteFactory method)|hyperpage}{8}
 \indexentry{TextSite (class in spy)|hyperpage}{8}
 \indexentry{compare() (spy.TextSite method)|hyperpage}{8}
-\indexentry{main() (in module spy)|hyperpage}{8}
-\indexentry{slugify() (in module spy)|hyperpage}{8}
+\indexentry{main() (in module spy)|hyperpage}{9}
+\indexentry{slugify() (in module spy)|hyperpage}{9}
