@@ -9,6 +9,13 @@ Welcome to sPy's documentation!
 sPy is Python based script tracking changes at any online or offline location.
 After detecting changes it sends emails notyfying about differences.
 
+Source
+======
+
+Source is available as mercurial repository at bitbucket. To download latest code run::
+
+    hg clone https://bitbucket.org/seler/spy
+
 Structure
 =========
 

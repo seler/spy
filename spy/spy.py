@@ -367,7 +367,7 @@ class HTMLSite(AbstractProxy):
 
 class BinarySite(AbstractProxy):
     """
-    Extends default Site behaviour providing md5 hash check for binaryfiles.
+    Extends default Site behaviour providing md5 hash check for binary files.
     """
     def parse_new_content(self, content):
         hash = hashlib.md5(content.encode('utf-8'))

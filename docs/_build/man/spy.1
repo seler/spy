@@ -33,6 +33,14 @@ level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .sp
 sPy is Python based script tracking changes at any online or offline location.
 After detecting changes it sends emails notyfying about differences.
+.sp
+Source is available as mercurial repository at bitbucket. To download latest code run:
+.sp
+.nf
+.ft C
+hg clone https://bitbucket.org/seler/spy
+.ft P
+.fi
 .INDENT 0.0
 .TP
 .B class spy.AbstractDecorator(subject)
@@ -186,7 +194,7 @@ Default proxy interface to \fBSite\fP.
 .INDENT 0.0
 .TP
 .B class spy.BinarySite(*args, **kwargs)
-Extends default Site behaviour providing md5 hash check for binaryfiles.
+Extends default Site behaviour providing md5 hash check for binary files.
 .INDENT 7.0
 .TP
 .B parse_new_content(content)

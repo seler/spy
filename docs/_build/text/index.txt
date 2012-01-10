@@ -7,6 +7,15 @@ location. After detecting changes it sends emails notyfying about
 differences.
 
 
+Source
+******
+
+Source is available as mercurial repository at bitbucket. To download
+latest code run:
+
+   hg clone https://bitbucket.org/seler/spy
+
+
 Structure
 *********
 
@@ -92,8 +101,8 @@ class class spy.AbstractProxy(*args, **kwargs)
 
 class class spy.BinarySite(*args, **kwargs)
 
-   Extends default Site behaviour providing md5 hash check for
-   binaryfiles.
+   Extends default Site behaviour providing md5 hash check for binary
+   files.
 
    parse_new_content(content)
 
