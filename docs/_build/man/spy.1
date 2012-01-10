@@ -1,0 +1,502 @@
+.TH "SPY" "1" "January 10, 2012" "0.1" "sPy"
+.SH NAME
+spy \- sPy Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+sPy is Python based script tracking changes at any online or offline location.
+After detecting changes it sends emails notyfying about differences.
+.INDENT 0.0
+.TP
+.B class spy.AbstractDecorator(subject)
+Decorator pattern.
+.sp
+Default interface for \fBSite\fP.
+.INDENT 7.0
+.TP
+.B compare()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B download_new_content()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B download_old_content()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_diff()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_filename()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_location()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_name()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_new_content()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_old_content()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B has_changed()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B notify()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B parse_new_content(content)
+.UNINDENT
+.INDENT 7.0
+.TP
+.B prepare_notification()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B save_new_content()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B set_diff(value)
+.UNINDENT
+.INDENT 7.0
+.TP
+.B set_new_content(value)
+.UNINDENT
+.INDENT 7.0
+.TP
+.B set_old_content(value)
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.AbstractProxy(*args, **kwargs)
+Proxy pattern
+.sp
+Default proxy interface to \fBSite\fP.
+.INDENT 7.0
+.TP
+.B compare()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B download_new_content()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B download_old_content()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_diff()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_filename()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_location()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_name()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_new_content()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_old_content()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B has_changed()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B notify()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B parse_new_content(content)
+.UNINDENT
+.INDENT 7.0
+.TP
+.B prepare_notification()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B save_new_content()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B set_diff(value)
+.UNINDENT
+.INDENT 7.0
+.TP
+.B set_new_content(value)
+.UNINDENT
+.INDENT 7.0
+.TP
+.B set_old_content(value)
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.BinarySite(*args, **kwargs)
+Extends default Site behaviour providing md5 hash check for binaryfiles.
+.INDENT 7.0
+.TP
+.B parse_new_content(content)
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.HTMLSite(*args, **kwargs)
+Extends default Site behaviour providing more information
+about changes in html resource.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B exception spy.ImproperlyConfigured
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.Mailer
+Singleton pattern.
+.sp
+Collects, creates and sends notification emails.
+.INDENT 7.0
+.TP
+.B exception NotSingle
+.UNINDENT
+.INDENT 7.0
+.TP
+.B Mailer._Mailer__instance = None
+.UNINDENT
+.INDENT 7.0
+.TP
+.B Mailer.configure(sender, default_recipients, host, port, username, password, use_tls)
+Configures mailer.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B classmethod Mailer.get_instance()
+Returns instance of Mailer.
+If no instance ever existed it creates one.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B Mailer.make_email(sender, recipient, data)
+Creates and returns email message for single recipient.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B Mailer.make_messages()
+Creates messages for all recipients.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B Mailer.prepare_notification(name, diff, location, recipients=None)
+Adds single notification about single site.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B Mailer.send_messages()
+Sends all messages.
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.NewSiteDecorator(*args, **kwargs)
+Supports initial check for new sites.
+.INDENT 7.0
+.TP
+.B compare()
+Nothing to compare ;)
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.OfflineSiteDecorator(subject)
+Provides access to content offline.
+.INDENT 7.0
+.TP
+.B download_new_content()
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.OnlineSiteDecorator(subject)
+Provides access to content online.
+.INDENT 7.0
+.TP
+.B download_new_content()
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.SPy(site_slugs=None)
+Facade pattern.
+.INDENT 7.0
+.TP
+.B configure()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_sites()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B initialize_mailer()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B notify()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B run()
+Runs everything.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B spy()
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.Site(name, location, slug, recipients=None)
+Represents single resource
+.INDENT 7.0
+.TP
+.B compare()
+Checks if new content is different than old content.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B download_new_content()
+Dummy. Left for customization in decorators or proxies.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B download_old_content()
+Opens old file (downloaded during last check) and returns it\(aqs content.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_diff()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_filename()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_location()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_name()
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_new_content()
+Returns new (downloaded) content.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B get_old_content()
+Return old content.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B has_changed()
+Return \fBTrue\fP if resource has changed.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B parse_new_content(content)
+Parses new content after downloading.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B prepare_notification()
+Feeds \fBMailer\fP.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B save_new_content()
+Saves new content for future comparisons.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B set_diff(value)
+.UNINDENT
+.INDENT 7.0
+.TP
+.B set_new_content(value)
+Sets new content from \fIvalue\fP.
+.UNINDENT
+.INDENT 7.0
+.TP
+.B set_old_content(value)
+Sets old content from \fIvalue\fP.
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.SiteFactory
+Factory pattern.
+.INDENT 7.0
+.TP
+.B get_site(section)
+Generates \fBSite\fP object.
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class spy.TextSite(*args, **kwargs)
+Extends default Site behaviour providing more information (unified diff)
+about changes in text resource.
+.INDENT 7.0
+.TP
+.B compare()
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B spy.main()
+Parses system args and runs \fBSPy\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B spy.slugify(value)
+Normalizes string, converts to lowercase, removes non\-alpha characters,
+and converts spaces to hyphens.
+.UNINDENT
+.SH CONFIGURATION
+.sp
+Config file should be under \fB~/.spyrc\fP. For full example see \fB.spyrc\fP in sources.
+.SS SPY section
+.sp
+SPY section is about email. Here\(aqs an example:
+.sp
+.nf
+.ft C
+[SPY]
+email_from = sPy <selerto@gmail.com>
+email_to = Rafa Selewoko <rselewonko@gmail.com>, Zenek Mietek <selerto@gmail.com>
+smtp_host = smtp.gmail.com
+smtp_port = 587
+smtp_username = selerto@gmail.com
+smtp_password = *******
+smtp_tls = True
+.ft P
+.fi
+.SS Sites sections
+.sp
+Each section that\(aqs name is not \fBSPY\fP represents site to check. Here\(aqs an example:
+.sp
+.nf
+.ft C
+[Rozkład zajęć]
+# choices are text, html, binary
+type = html
+# choices are online or offilne
+site = online
+# starts with \(ga\(gahttp\(ga\(ga if online, with \(ga\(ga/\(ga\(ga if offline
+location = http://www.degra.wi.pb.edu.pl/rozklady/rozklad.php?page=st
+
+# slug is only required if you want to check each site separately
+slug = rozkladzajec
+.ft P
+.fi
+.SH RUNNING SPY
+.sp
+To check all sites:
+.sp
+.nf
+.ft C
+\&./spy.py or python3 /location/of/spy.py
+.ft P
+.fi
+.sp
+To check specified sites:
+.sp
+.nf
+.ft C
+python3 /location/of/spy.py site1_slug site2_slug
+.ft P
+.fi
+.sp
+It\(aqs the best to run sPy from \fBcron\fP or \fBWindows Task Sheduler\fP.
+.INDENT 0.0
+.IP \(bu 2
+python3
+.UNINDENT
+.sp
+sPy: Python based script tracking changes at any url
+Copyright (C) 2011  Rafał Selewońko <\fI\%rafal@selewonko.com\fP>
+.sp
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+.sp
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+.sp
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <\fI\%http://www.gnu.org/licenses/\fP>.
+.SH AUTHOR
+Rafał Selewońko
+.SH COPYRIGHT
+2012, Rafał Selewońko
+.\" Generated by docutils manpage writer.
+.\" 
+.

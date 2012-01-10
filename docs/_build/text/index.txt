@@ -12,7 +12,9 @@ Structure
 
 class class spy.AbstractDecorator(subject)
 
-   Decorator pattern
+   Decorator pattern.
+
+   Default interface for "Site".
 
    compare()
 
@@ -52,6 +54,8 @@ class class spy.AbstractProxy(*args, **kwargs)
 
    Proxy pattern
 
+   Default proxy interface to "Site".
+
    compare()
 
    download_new_content()
@@ -88,104 +92,27 @@ class class spy.AbstractProxy(*args, **kwargs)
 
 class class spy.BinarySite(*args, **kwargs)
 
-   cokolwiek tylko do sprawdzenia czy sie zmienilo z poprzednim;
-   sprawdzane na podstawie hasha md5 lub sha1
-
-   compare()
-
-   download_new_content()
-
-   download_old_content()
-
-   get_diff()
-
-   get_filename()
-
-   get_location()
-
-   get_name()
-
-   get_new_content()
-
-   get_old_content()
-
-   has_changed()
-
-   notify()
+   Extends default Site behaviour providing md5 hash check for
+   binaryfiles.
 
    parse_new_content(content)
-
-   prepare_notification()
-
-   save_new_content()
-
-   set_diff(value)
-
-   set_new_content(value)
-
-   set_old_content(value)
 
 class class spy.HTMLSite(*args, **kwargs)
 
-   cokolwiek trescia html
-
-   compare()
-
-   download_new_content()
-
-   download_old_content()
-
-   get_diff()
-
-   get_filename()
-
-   get_location()
-
-   get_name()
-
-   get_new_content()
-
-   get_old_content()
-
-   has_changed()
-
-   notify()
-
-   parse_new_content(content)
-
-   prepare_notification()
-
-   save_new_content()
-
-   set_diff(value)
-
-   set_new_content(value)
-
-   set_old_content(value)
+   Extends default Site behaviour providing more information about
+   changes in html resource.
 
 exception exception spy.ImproperlyConfigured
 
-   args
-
-   with_traceback()
-
-      Exception.with_traceback(tb) -- set self.__traceback__ to tb and
-      return self.
-
 class class spy.Mailer
 
-   Singleton pattern
+   Singleton pattern.
 
    Collects, creates and sends notification emails.
 
    exception exception NotSingle
 
-      args
-
-      with_traceback()
-
-         Exception.with_traceback(tb) -- set self.__traceback__ to tb
-         and return self.
+   Mailer._Mailer__instance = None
 
    Mailer.configure(sender, default_recipients, host, port, username, password, use_tls)
 
@@ -214,117 +141,29 @@ class class spy.Mailer
 
 class class spy.NewSiteDecorator(*args, **kwargs)
 
+   Supports initial check for new sites.
+
    compare()
 
-   download_new_content()
-
-   download_old_content()
-
-   get_diff()
-
-   get_filename()
-
-   get_location()
-
-   get_name()
-
-   get_new_content()
-
-   get_old_content()
-
-   has_changed()
-
-   notify()
-
-   parse_new_content(content)
-
-   prepare_notification()
-
-   save_new_content()
-
-   set_diff(value)
-
-   set_new_content(value)
-
-   set_old_content(value)
+      Nothing to compare ;)
 
 class class spy.OfflineSiteDecorator(subject)
 
-   compare()
+   Provides access to content offline.
 
    download_new_content()
-
-   download_old_content()
-
-   get_diff()
-
-   get_filename()
-
-   get_location()
-
-   get_name()
-
-   get_new_content()
-
-   get_old_content()
-
-   has_changed()
-
-   notify()
-
-   parse_new_content(content)
-
-   prepare_notification()
-
-   save_new_content()
-
-   set_diff(value)
-
-   set_new_content(value)
-
-   set_old_content(value)
 
 class class spy.OnlineSiteDecorator(subject)
 
-   compare()
+   Provides access to content online.
 
    download_new_content()
 
-   download_old_content()
+class class spy.SPy(site_slugs=None)
 
-   get_diff()
+   Facade pattern.
 
-   get_filename()
-
-   get_location()
-
-   get_name()
-
-   get_new_content()
-
-   get_old_content()
-
-   has_changed()
-
-   notify()
-
-   parse_new_content(content)
-
-   prepare_notification()
-
-   save_new_content()
-
-   set_diff(value)
-
-   set_new_content(value)
-
-   set_old_content(value)
-
-class class spy.SPy
-
-   Facade pattern
-
-   configure(site_slugs=None)
+   configure()
 
    get_sites()
 
@@ -332,15 +171,28 @@ class class spy.SPy
 
    notify()
 
+   run()
+
+      Runs everything.
+
    spy()
 
 class class spy.Site(name, location, slug, recipients=None)
 
+   Represents single resource
+
    compare()
+
+      Checks if new content is different than old content.
 
    download_new_content()
 
+      Dummy. Left for customization in decorators or proxies.
+
    download_old_content()
+
+      Opens old file (downloaded during last check) and returns it's
+      content.
 
    get_diff()
 
@@ -352,67 +204,56 @@ class class spy.Site(name, location, slug, recipients=None)
 
    get_new_content()
 
+      Returns new (downloaded) content.
+
    get_old_content()
+
+      Return old content.
 
    has_changed()
 
+      Return "True" if resource has changed.
+
    parse_new_content(content)
+
+      Parses new content after downloading.
 
    prepare_notification()
 
+      Feeds "Mailer".
+
    save_new_content()
+
+      Saves new content for future comparisons.
 
    set_diff(value)
 
    set_new_content(value)
 
+      Sets new content from *value*.
+
    set_old_content(value)
+
+      Sets old content from *value*.
 
 class class spy.SiteFactory
 
-   Factory pattern
+   Factory pattern.
 
    get_site(section)
 
+      Generates "Site" object.
+
 class class spy.TextSite(*args, **kwargs)
 
-   cokolwiek trescia tekstowa
+   Extends default Site behaviour providing more information (unified
+   diff) about changes in text resource.
 
    compare()
 
-   download_new_content()
-
-   download_old_content()
-
-   get_diff()
-
-   get_filename()
-
-   get_location()
-
-   get_name()
-
-   get_new_content()
-
-   get_old_content()
-
-   has_changed()
-
-   notify()
-
-   parse_new_content(content)
-
-   prepare_notification()
-
-   save_new_content()
-
-   set_diff(value)
-
-   set_new_content(value)
-
-   set_old_content(value)
-
 spy.main()
+
+   Parses system args and runs "SPy".
 
 spy.slugify(value)
 
@@ -469,11 +310,11 @@ Running sPy
 
 To check all sites:
 
-   ./s.py or python3 /location/of/s.py
+   ./spy.py or python3 /location/of/spy.py
 
 To check specified sites:
 
-   python3 /location/of/s.py site1_slug site2_slug
+   python3 /location/of/spy.py site1_slug site2_slug
 
 It's the best to run sPy from **cron** or **Windows Task Sheduler**.
 

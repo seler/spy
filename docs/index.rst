@@ -16,7 +16,6 @@ Structure
    :members:
    :undoc-members:
    :private-members:
-   :inherited-members:
 
 User's guide
 ============

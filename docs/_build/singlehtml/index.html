@@ -50,7 +50,8 @@ After detecting changes it sends emails notyfying about differences.</p>
 <dl class="class">
 <dt id="spy.AbstractDecorator">
 <em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">AbstractDecorator</tt><big>(</big><em>subject</em><big>)</big><a class="headerlink" href="#spy.AbstractDecorator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Decorator pattern</p>
+<dd><p>Decorator pattern.</p>
+<p>Default interface for <tt class="docutils literal"><span class="pre">Site</span></tt>.</p>
 <dl class="method">
 <dt id="spy.AbstractDecorator.compare">
 <tt class="descname">compare</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.AbstractDecorator.compare" title="Permalink to this definition">¶</a></dt>
@@ -142,6 +143,7 @@ After detecting changes it sends emails notyfying about differences.</p>
 <dt id="spy.AbstractProxy">
 <em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">AbstractProxy</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#spy.AbstractProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Proxy pattern</p>
+<p>Default proxy interface to <tt class="docutils literal"><span class="pre">Site</span></tt>.</p>
 <dl class="method">
 <dt id="spy.AbstractProxy.compare">
 <tt class="descname">compare</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.AbstractProxy.compare" title="Permalink to this definition">¶</a></dt>
@@ -232,91 +234,10 @@ After detecting changes it sends emails notyfying about differences.</p>
 <dl class="class">
 <dt id="spy.BinarySite">
 <em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">BinarySite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#spy.BinarySite" title="Permalink to this definition">¶</a></dt>
-<dd><p>cokolwiek tylko do sprawdzenia czy sie zmienilo z poprzednim;
-sprawdzane na podstawie hasha md5 lub sha1</p>
-<dl class="method">
-<dt id="spy.BinarySite.compare">
-<tt class="descname">compare</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.compare" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.download_new_content">
-<tt class="descname">download_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.download_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.download_old_content">
-<tt class="descname">download_old_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.download_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.get_diff">
-<tt class="descname">get_diff</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.get_diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.get_filename">
-<tt class="descname">get_filename</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.get_filename" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.get_location">
-<tt class="descname">get_location</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.get_location" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.get_name">
-<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.get_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.get_new_content">
-<tt class="descname">get_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.get_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.get_old_content">
-<tt class="descname">get_old_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.get_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.has_changed">
-<tt class="descname">has_changed</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.has_changed" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.notify">
-<tt class="descname">notify</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.notify" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<dd><p>Extends default Site behaviour providing md5 hash check for binaryfiles.</p>
 <dl class="method">
 <dt id="spy.BinarySite.parse_new_content">
 <tt class="descname">parse_new_content</tt><big>(</big><em>content</em><big>)</big><a class="headerlink" href="#spy.BinarySite.parse_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.prepare_notification">
-<tt class="descname">prepare_notification</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.prepare_notification" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.save_new_content">
-<tt class="descname">save_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.BinarySite.save_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.set_diff">
-<tt class="descname">set_diff</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.BinarySite.set_diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.set_new_content">
-<tt class="descname">set_new_content</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.BinarySite.set_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.BinarySite.set_old_content">
-<tt class="descname">set_old_content</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.BinarySite.set_old_content" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -324,110 +245,14 @@ sprawdzane na podstawie hasha md5 lub sha1</p>
 <dl class="class">
 <dt id="spy.HTMLSite">
 <em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">HTMLSite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#spy.HTMLSite" title="Permalink to this definition">¶</a></dt>
-<dd><p>cokolwiek trescia html</p>
-<dl class="method">
-<dt id="spy.HTMLSite.compare">
-<tt class="descname">compare</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.compare" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.download_new_content">
-<tt class="descname">download_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.download_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.download_old_content">
-<tt class="descname">download_old_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.download_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.get_diff">
-<tt class="descname">get_diff</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.get_diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.get_filename">
-<tt class="descname">get_filename</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.get_filename" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.get_location">
-<tt class="descname">get_location</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.get_location" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.get_name">
-<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.get_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.get_new_content">
-<tt class="descname">get_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.get_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.get_old_content">
-<tt class="descname">get_old_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.get_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.has_changed">
-<tt class="descname">has_changed</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.has_changed" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.notify">
-<tt class="descname">notify</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.notify" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.parse_new_content">
-<tt class="descname">parse_new_content</tt><big>(</big><em>content</em><big>)</big><a class="headerlink" href="#spy.HTMLSite.parse_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.prepare_notification">
-<tt class="descname">prepare_notification</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.prepare_notification" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.save_new_content">
-<tt class="descname">save_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.HTMLSite.save_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.set_diff">
-<tt class="descname">set_diff</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.HTMLSite.set_diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.set_new_content">
-<tt class="descname">set_new_content</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.HTMLSite.set_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.HTMLSite.set_old_content">
-<tt class="descname">set_old_content</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.HTMLSite.set_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<dd><p>Extends default Site behaviour providing more information
+about changes in html resource.</p>
 </dd></dl>
 
 <dl class="exception">
 <dt id="spy.ImproperlyConfigured">
 <em class="property">exception </em><tt class="descclassname">spy.</tt><tt class="descname">ImproperlyConfigured</tt><a class="headerlink" href="#spy.ImproperlyConfigured" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="spy.ImproperlyConfigured.args">
-<tt class="descname">args</tt><a class="headerlink" href="#spy.ImproperlyConfigured.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.ImproperlyConfigured.with_traceback">
-<tt class="descname">with_traceback</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.ImproperlyConfigured.with_traceback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exception.with_traceback(tb) &#8211;
-set self.__traceback__ to tb and return self.</p>
-</dd></dl>
-
-</dd></dl>
 
 <dl class="class">
 <dt id="spy.Mailer">
@@ -437,19 +262,7 @@ set self.__traceback__ to tb and return self.</p>
 <dl class="exception">
 <dt id="spy.Mailer.NotSingle">
 <em class="property">exception </em><tt class="descname">NotSingle</tt><a class="headerlink" href="#spy.Mailer.NotSingle" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="spy.Mailer.NotSingle.args">
-<tt class="descname">args</tt><a class="headerlink" href="#spy.Mailer.NotSingle.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.Mailer.NotSingle.with_traceback">
-<tt class="descname">with_traceback</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.Mailer.NotSingle.with_traceback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exception.with_traceback(tb) &#8211;
-set self.__traceback__ to tb and return self.</p>
-</dd></dl>
-
-</dd></dl>
 
 <dl class="attribute">
 <dt id="spy.Mailer._Mailer__instance">
@@ -498,179 +311,22 @@ If no instance ever existed it creates one.</p>
 <dl class="class">
 <dt id="spy.NewSiteDecorator">
 <em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">NewSiteDecorator</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<dd><p>Supports initial check for new sites.</p>
+<dl class="method">
 <dt id="spy.NewSiteDecorator.compare">
 <tt class="descname">compare</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.compare" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.download_new_content">
-<tt class="descname">download_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.download_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.download_old_content">
-<tt class="descname">download_old_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.download_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.get_diff">
-<tt class="descname">get_diff</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.get_diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.get_filename">
-<tt class="descname">get_filename</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.get_filename" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.get_location">
-<tt class="descname">get_location</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.get_location" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.get_name">
-<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.get_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.get_new_content">
-<tt class="descname">get_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.get_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.get_old_content">
-<tt class="descname">get_old_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.get_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.has_changed">
-<tt class="descname">has_changed</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.has_changed" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.notify">
-<tt class="descname">notify</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.notify" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.parse_new_content">
-<tt class="descname">parse_new_content</tt><big>(</big><em>content</em><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.parse_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.prepare_notification">
-<tt class="descname">prepare_notification</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.prepare_notification" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.save_new_content">
-<tt class="descname">save_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.save_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.set_diff">
-<tt class="descname">set_diff</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.set_diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.set_new_content">
-<tt class="descname">set_new_content</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.set_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.NewSiteDecorator.set_old_content">
-<tt class="descname">set_old_content</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.NewSiteDecorator.set_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Nothing to compare ;)</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="spy.OfflineSiteDecorator">
 <em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">OfflineSiteDecorator</tt><big>(</big><em>subject</em><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="spy.OfflineSiteDecorator.compare">
-<tt class="descname">compare</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.compare" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<dd><p>Provides access to content offline.</p>
 <dl class="method">
 <dt id="spy.OfflineSiteDecorator.download_new_content">
 <tt class="descname">download_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.download_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.download_old_content">
-<tt class="descname">download_old_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.download_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.get_diff">
-<tt class="descname">get_diff</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.get_diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.get_filename">
-<tt class="descname">get_filename</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.get_filename" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.get_location">
-<tt class="descname">get_location</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.get_location" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.get_name">
-<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.get_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.get_new_content">
-<tt class="descname">get_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.get_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.get_old_content">
-<tt class="descname">get_old_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.get_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.has_changed">
-<tt class="descname">has_changed</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.has_changed" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.notify">
-<tt class="descname">notify</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.notify" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.parse_new_content">
-<tt class="descname">parse_new_content</tt><big>(</big><em>content</em><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.parse_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.prepare_notification">
-<tt class="descname">prepare_notification</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.prepare_notification" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.save_new_content">
-<tt class="descname">save_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.save_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.set_diff">
-<tt class="descname">set_diff</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.set_diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.set_new_content">
-<tt class="descname">set_new_content</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.set_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OfflineSiteDecorator.set_old_content">
-<tt class="descname">set_old_content</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.OfflineSiteDecorator.set_old_content" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -678,100 +334,21 @@ If no instance ever existed it creates one.</p>
 <dl class="class">
 <dt id="spy.OnlineSiteDecorator">
 <em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">OnlineSiteDecorator</tt><big>(</big><em>subject</em><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="spy.OnlineSiteDecorator.compare">
-<tt class="descname">compare</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.compare" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<dd><p>Provides access to content online.</p>
 <dl class="method">
 <dt id="spy.OnlineSiteDecorator.download_new_content">
 <tt class="descname">download_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.download_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.download_old_content">
-<tt class="descname">download_old_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.download_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.get_diff">
-<tt class="descname">get_diff</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.get_diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.get_filename">
-<tt class="descname">get_filename</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.get_filename" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.get_location">
-<tt class="descname">get_location</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.get_location" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.get_name">
-<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.get_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.get_new_content">
-<tt class="descname">get_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.get_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.get_old_content">
-<tt class="descname">get_old_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.get_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.has_changed">
-<tt class="descname">has_changed</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.has_changed" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.notify">
-<tt class="descname">notify</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.notify" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.parse_new_content">
-<tt class="descname">parse_new_content</tt><big>(</big><em>content</em><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.parse_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.prepare_notification">
-<tt class="descname">prepare_notification</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.prepare_notification" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.save_new_content">
-<tt class="descname">save_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.save_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.set_diff">
-<tt class="descname">set_diff</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.set_diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.set_new_content">
-<tt class="descname">set_new_content</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.set_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.OnlineSiteDecorator.set_old_content">
-<tt class="descname">set_old_content</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.OnlineSiteDecorator.set_old_content" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="spy.SPy">
-<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">SPy</tt><a class="headerlink" href="#spy.SPy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Facade pattern</p>
+<em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">SPy</tt><big>(</big><em>site_slugs=None</em><big>)</big><a class="headerlink" href="#spy.SPy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Facade pattern.</p>
 <dl class="method">
 <dt id="spy.SPy.configure">
-<tt class="descname">configure</tt><big>(</big><em>site_slugs=None</em><big>)</big><a class="headerlink" href="#spy.SPy.configure" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">configure</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.SPy.configure" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -790,6 +367,12 @@ If no instance ever existed it creates one.</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="spy.SPy.run">
+<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.SPy.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs everything.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="spy.SPy.spy">
 <tt class="descname">spy</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.SPy.spy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -803,7 +386,8 @@ If no instance ever existed it creates one.</p>
 <dl class="method">
 <dt id="spy.Site.compare">
 <tt class="descname">compare</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.Site.compare" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Checks if new content is different than old content.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="spy.Site.download_new_content">
@@ -852,7 +436,8 @@ If no instance ever existed it creates one.</p>
 <dl class="method">
 <dt id="spy.Site.has_changed">
 <tt class="descname">has_changed</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.Site.has_changed" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return <tt class="docutils literal"><span class="pre">True</span></tt> if resource has changed.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="spy.Site.parse_new_content">
@@ -863,12 +448,14 @@ If no instance ever existed it creates one.</p>
 <dl class="method">
 <dt id="spy.Site.prepare_notification">
 <tt class="descname">prepare_notification</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.Site.prepare_notification" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Feeds <tt class="docutils literal"><span class="pre">Mailer</span></tt>.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="spy.Site.save_new_content">
 <tt class="descname">save_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.Site.save_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Saves new content for future comparisons.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="spy.Site.set_diff">
@@ -892,101 +479,23 @@ If no instance ever existed it creates one.</p>
 <dl class="class">
 <dt id="spy.SiteFactory">
 <em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">SiteFactory</tt><a class="headerlink" href="#spy.SiteFactory" title="Permalink to this definition">¶</a></dt>
-<dd><p>Factory pattern</p>
+<dd><p>Factory pattern.</p>
 <dl class="method">
 <dt id="spy.SiteFactory.get_site">
 <tt class="descname">get_site</tt><big>(</big><em>section</em><big>)</big><a class="headerlink" href="#spy.SiteFactory.get_site" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Generates <tt class="docutils literal"><span class="pre">Site</span></tt> object.</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="spy.TextSite">
 <em class="property">class </em><tt class="descclassname">spy.</tt><tt class="descname">TextSite</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#spy.TextSite" title="Permalink to this definition">¶</a></dt>
-<dd><p>cokolwiek trescia tekstowa</p>
+<dd><p>Extends default Site behaviour providing more information (unified diff)
+about changes in text resource.</p>
 <dl class="method">
 <dt id="spy.TextSite.compare">
 <tt class="descname">compare</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.compare" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.download_new_content">
-<tt class="descname">download_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.download_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.download_old_content">
-<tt class="descname">download_old_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.download_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.get_diff">
-<tt class="descname">get_diff</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.get_diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.get_filename">
-<tt class="descname">get_filename</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.get_filename" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.get_location">
-<tt class="descname">get_location</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.get_location" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.get_name">
-<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.get_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.get_new_content">
-<tt class="descname">get_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.get_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.get_old_content">
-<tt class="descname">get_old_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.get_old_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.has_changed">
-<tt class="descname">has_changed</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.has_changed" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.notify">
-<tt class="descname">notify</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.notify" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.parse_new_content">
-<tt class="descname">parse_new_content</tt><big>(</big><em>content</em><big>)</big><a class="headerlink" href="#spy.TextSite.parse_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.prepare_notification">
-<tt class="descname">prepare_notification</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.prepare_notification" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.save_new_content">
-<tt class="descname">save_new_content</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.TextSite.save_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.set_diff">
-<tt class="descname">set_diff</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.TextSite.set_diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.set_new_content">
-<tt class="descname">set_new_content</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.TextSite.set_new_content" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="spy.TextSite.set_old_content">
-<tt class="descname">set_old_content</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#spy.TextSite.set_old_content" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -994,7 +503,8 @@ If no instance ever existed it creates one.</p>
 <dl class="function">
 <dt id="spy.main">
 <tt class="descclassname">spy.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#spy.main" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Parses system args and runs <tt class="docutils literal"><span class="pre">SPy</span></tt>.</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="spy.slugify">

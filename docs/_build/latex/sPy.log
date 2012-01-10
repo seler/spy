@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.10)  10 JAN 2012 10:07
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.10)  10 JAN 2012 11:51
 entering extended mode
  %&-line parsing enabled.
 **sPy.tex
@@ -891,86 +891,65 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 125.
- [3] [4] [5] [6] [7]
-[8]
+ [3] [4] [5] [6]
 Chapter 2.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 1299.
-[9
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 720.
+[7
 
-] [10]
+] [8]
 Chapter 3.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 1352
-.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 773.
+
 (/usr/share/texmf-texlive/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [11
+) [9
 
-] [12
+] [10
 
 ]
 Chapter 4.
-[13] [14
+[11] [12
 
-] [15
+] [13
 
 
-] (./sPy.ind [16
+] (./sPy.ind [14
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
 []\T1/ptm/m/n/10 download_new_content() (spy.AbstractDecorator
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--39
-[]\T1/ptm/m/n/10 download_new_content() (spy.NewSiteDecorator
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
 []\T1/ptm/m/n/10 download_new_content() (spy.OfflineSiteDecorator
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
 []\T1/ptm/m/n/10 download_new_content() (spy.OnlineSiteDecorator
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
 []\T1/ptm/m/n/10 download_old_content() (spy.AbstractDecorator
  []
 
+[15
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
-[]\T1/ptm/m/n/10 download_old_content() (spy.NewSiteDecorator
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
-[]\T1/ptm/m/n/10 download_old_content() (spy.OfflineSiteDecorator
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-[]\T1/ptm/m/n/10 download_old_content() (spy.OnlineSiteDecorator
- []
-
-[17
-
-] [18] [19
+] [16
 
 ]) (./sPy.aux) ) 
 Here is how much of TeX's memory you used:
- 8315 strings out of 493848
- 115980 string characters out of 1152823
- 205574 words of memory out of 3000000
- 11176 multiletter control sequences out of 15000+50000
+ 8108 strings out of 493848
+ 110736 string characters out of 1152823
+ 197985 words of memory out of 3000000
+ 11072 multiletter control sequences out of 15000+50000
  56831 words of font info for 64 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 45i,12n,45p,293b,450s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,12n,45p,293b,456s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/sha
 re/texmf-texlive/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texmf-texlive/f
 onts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/hel
@@ -979,9 +958,9 @@ vetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvbo8a.pfb
 f-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type
 1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on sPy.pdf (23 pages, 185998 bytes).
+Output written on sPy.pdf (20 pages, 152222 bytes).
 PDF statistics:
- 599 PDF objects out of 1000 (max. 8388607)
- 219 named destinations out of 1000 (max. 500000)
+ 365 PDF objects out of 1000 (max. 8388607)
+ 116 named destinations out of 1000 (max. 500000)
  65 words of extra memory for PDF output out of 10000 (max. 10000000)
 

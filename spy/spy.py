@@ -221,6 +221,9 @@ class Site(object):
         return content
 
     def compare(self):
+        """
+        Checks if new content is different than old content.
+        """
         if self.new_content != self.old_content:
             if VERBOSE:
                 sys.stdout.write('site "%s" has changed\n' % self.get_name())
@@ -231,6 +234,9 @@ class Site(object):
                 sys.stdout.write('site "%s" has NOT changed\n' % self.get_name())
 
     def save_new_content(self):
+        """
+        Saves new content for future comparisons.
+        """
         f = open(self.filename, 'w')
         f.write(self.new_content)
         f.close()
@@ -245,9 +251,15 @@ class Site(object):
         return self.name
 
     def has_changed(self):
+        """
+        Return ``True`` if resource has changed.
+        """
         return bool(self.diff)
 
     def prepare_notification(self):
+        """
+        Feeds ``Mailer``.
+        """
         self.mailer.prepare_notification(self.name, self.diff, self.location, self.recipients)
 
     def set_diff(self, value):
@@ -257,7 +269,11 @@ class Site(object):
         return self.diff
 
 class AbstractProxy(object):
-    """Proxy pattern"""
+    """
+    Proxy pattern
+    
+    Default proxy interface to ``Site``.
+    """
 
     def __init__(self, *args, **kwargs):
         self.subject = Site(*args, **kwargs)
@@ -315,7 +331,10 @@ class AbstractProxy(object):
 
 
 class TextSite(AbstractProxy):
-    "cokolwiek trescia tekstowa"
+    """
+    Extends default Site behaviour providing more information (unified diff)
+    about changes in text resource.
+    """
     def compare(self):
         diff = unified_diff(self.get_old_content().splitlines(),
                             self.get_new_content().splitlines(),
@@ -336,7 +355,10 @@ class TextSite(AbstractProxy):
 
 
 class HTMLSite(AbstractProxy):
-    "cokolwiek trescia html"
+    """
+    Extends default Site behaviour providing more information
+    about changes in html resource.
+    """
     def __init__(self, *args, **kwargs):
         if not QUIET:
             sys.stdout.write('WARNING! HTMLSite is not implemented yet. Using default Site behaviour.\n')
@@ -344,15 +366,20 @@ class HTMLSite(AbstractProxy):
 
 
 class BinarySite(AbstractProxy):
-    """cokolwiek tylko do sprawdzenia czy sie zmienilo z poprzednim;
-    sprawdzane na podstawie hasha md5 lub sha1"""
+    """
+    Extends default Site behaviour providing md5 hash check for binaryfiles.
+    """
     def parse_new_content(self, content):
         hash = hashlib.md5(content.encode('utf-8'))
         return hash.hexdigest()
         
 
 class AbstractDecorator(object):
-    """Decorator pattern"""
+    """
+    Decorator pattern.
+
+    Default interface for ``Site``.
+    """
 
     def __init__(self, subject):
         self.subject = subject
@@ -410,19 +437,28 @@ class AbstractDecorator(object):
 
 
 class OnlineSiteDecorator(AbstractDecorator):
+    """
+    Provides access to content online.
+    """
     def download_new_content(self):
         response = urlopen(self.subject.get_location())
         content = response.read()
-        return self.subject.parse_new_content(content.decode('ascii', errors='ignore')) # FIXME
+        return self.subject.parse_new_content(content.decode('ascii', errors='ignore'))
 
 
 class OfflineSiteDecorator(AbstractDecorator):
+    """
+    Provides access to content offline.
+    """
     def download_new_content(self):
         f = open(self.subject.get_location())
         return self.subject.parse_new_content(f.read())
 
 
 class NewSiteDecorator(AbstractDecorator):
+    """
+    Supports initial check for new sites.
+    """
     def __init__(self, *args, **kwargs):
         super(NewSiteDecorator, self).__init__(*args, **kwargs)
         if not os.path.exists(self.subject.get_filename()):
@@ -435,10 +471,21 @@ class NewSiteDecorator(AbstractDecorator):
             f.write(new_content)
             f.close()
 
+    def compare(self):
+        """
+        Nothing to compare ;)
+        """
+        pass
+
 
 class SiteFactory(object):
-    """Factory pattern"""
+    """
+    Factory pattern.
+    """
     def get_site(self, section):
+        """
+        Generates ``Site`` object.
+        """
         type = section.get('type', DEFAULT_SITE_TYPE).lower()
         location = section.get('location')
         site = section.get('site', 'online')
@@ -463,9 +510,12 @@ class SiteFactory(object):
 
 
 class SPy(object):
-    """Facade pattern"""
-    def __init__(self):
+    """
+    Facade pattern.
+    """
+    def __init__(self, site_slugs=None):
         self.sites = None
+        self.site_slugs = site_slugs
 
     def get_sites(self):
         self.sites = []
@@ -477,8 +527,7 @@ class SPy(object):
                         continue
                 self.sites.append(site_factory.get_site(self.config[section]))
 
-    def configure(self, site_slugs=None):
-        self.site_slugs = site_slugs
+    def configure(self):
         cfg_file = os.path.expanduser(SPY_DEFAULT_CONFIG_FILE)
         self.config = configparser.ConfigParser()
         self.config.read(cfg_file)
@@ -510,16 +559,22 @@ class SPy(object):
         mailer.make_messages()
         mailer.send_messages()
 
+    def run(self):
+        """
+        Runs everything.
+        """
+        spy.configure()
+        spy.initialize_mailer()
+        spy.get_sites()
+        spy.spy()
+        spy.notify()
+
 
 def main():
+    """
+    Parses system args and runs ``SPy``.
+    """
     args = list(sys.argv[1:])
-    if '-v' in args:
-        VERBOSE = True
-        args.remove('-v')
-        sys.stdout.write('verbose mode on\n\n')
-    if '-q' in args:
-        QUIET = True
-        args.remove('-q')
 
     # what's left in ``args`` are slugs of sites to check
     if args:
@@ -527,12 +582,8 @@ def main():
     else:
         site_slugs = None
 
-    spy = SPy()
-    spy.configure(site_slugs)
-    spy.initialize_mailer()
-    spy.get_sites()
-    spy.spy()
-    spy.notify()
+    spy = SPy(site_slugs)
+    spy.run()
 
 if __name__ == "__main__":
     main()

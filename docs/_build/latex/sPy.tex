@@ -123,7 +123,9 @@ After detecting changes it sends emails notyfying about differences.
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.AbstractDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{AbstractDecorator}}{\emph{subject}}{}
-Decorator pattern
+Decorator pattern.
+
+Default interface for \code{Site}.
 \index{compare() (spy.AbstractDecorator method)}
 
 \begin{fulllineitems}
@@ -234,6 +236,8 @@ Decorator pattern
 \begin{fulllineitems}
 \phantomsection\label{index:spy.AbstractProxy}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{AbstractProxy}}{\emph{*args}, \emph{**kwargs}}{}
 Proxy pattern
+
+Default proxy interface to \code{Site}.
 \index{compare() (spy.AbstractProxy method)}
 
 \begin{fulllineitems}
@@ -343,108 +347,11 @@ Proxy pattern
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.BinarySite}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{BinarySite}}{\emph{*args}, \emph{**kwargs}}{}
-cokolwiek tylko do sprawdzenia czy sie zmienilo z poprzednim;
-sprawdzane na podstawie hasha md5 lub sha1
-\index{compare() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.compare}\pysiglinewithargsret{\bfcode{compare}}{}{}
-\end{fulllineitems}
-
-\index{download\_new\_content() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.download_new_content}\pysiglinewithargsret{\bfcode{download\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{download\_old\_content() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.download_old_content}\pysiglinewithargsret{\bfcode{download\_old\_content}}{}{}
-\end{fulllineitems}
-
-\index{get\_diff() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.get_diff}\pysiglinewithargsret{\bfcode{get\_diff}}{}{}
-\end{fulllineitems}
-
-\index{get\_filename() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.get_filename}\pysiglinewithargsret{\bfcode{get\_filename}}{}{}
-\end{fulllineitems}
-
-\index{get\_location() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.get_location}\pysiglinewithargsret{\bfcode{get\_location}}{}{}
-\end{fulllineitems}
-
-\index{get\_name() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.get_name}\pysiglinewithargsret{\bfcode{get\_name}}{}{}
-\end{fulllineitems}
-
-\index{get\_new\_content() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.get_new_content}\pysiglinewithargsret{\bfcode{get\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{get\_old\_content() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.get_old_content}\pysiglinewithargsret{\bfcode{get\_old\_content}}{}{}
-\end{fulllineitems}
-
-\index{has\_changed() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.has_changed}\pysiglinewithargsret{\bfcode{has\_changed}}{}{}
-\end{fulllineitems}
-
-\index{notify() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.notify}\pysiglinewithargsret{\bfcode{notify}}{}{}
-\end{fulllineitems}
-
+Extends default Site behaviour providing md5 hash check for binaryfiles.
 \index{parse\_new\_content() (spy.BinarySite method)}
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.BinarySite.parse_new_content}\pysiglinewithargsret{\bfcode{parse\_new\_content}}{\emph{content}}{}
-\end{fulllineitems}
-
-\index{prepare\_notification() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.prepare_notification}\pysiglinewithargsret{\bfcode{prepare\_notification}}{}{}
-\end{fulllineitems}
-
-\index{save\_new\_content() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.save_new_content}\pysiglinewithargsret{\bfcode{save\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{set\_diff() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.set_diff}\pysiglinewithargsret{\bfcode{set\_diff}}{\emph{value}}{}
-\end{fulllineitems}
-
-\index{set\_new\_content() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.set_new_content}\pysiglinewithargsret{\bfcode{set\_new\_content}}{\emph{value}}{}
-\end{fulllineitems}
-
-\index{set\_old\_content() (spy.BinarySite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.BinarySite.set_old_content}\pysiglinewithargsret{\bfcode{set\_old\_content}}{\emph{value}}{}
 \end{fulllineitems}
 
 
@@ -454,131 +361,15 @@ sprawdzane na podstawie hasha md5 lub sha1
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.HTMLSite}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{HTMLSite}}{\emph{*args}, \emph{**kwargs}}{}
-cokolwiek trescia html
-\index{compare() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.compare}\pysiglinewithargsret{\bfcode{compare}}{}{}
-\end{fulllineitems}
-
-\index{download\_new\_content() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.download_new_content}\pysiglinewithargsret{\bfcode{download\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{download\_old\_content() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.download_old_content}\pysiglinewithargsret{\bfcode{download\_old\_content}}{}{}
-\end{fulllineitems}
-
-\index{get\_diff() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.get_diff}\pysiglinewithargsret{\bfcode{get\_diff}}{}{}
-\end{fulllineitems}
-
-\index{get\_filename() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.get_filename}\pysiglinewithargsret{\bfcode{get\_filename}}{}{}
-\end{fulllineitems}
-
-\index{get\_location() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.get_location}\pysiglinewithargsret{\bfcode{get\_location}}{}{}
-\end{fulllineitems}
-
-\index{get\_name() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.get_name}\pysiglinewithargsret{\bfcode{get\_name}}{}{}
-\end{fulllineitems}
-
-\index{get\_new\_content() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.get_new_content}\pysiglinewithargsret{\bfcode{get\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{get\_old\_content() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.get_old_content}\pysiglinewithargsret{\bfcode{get\_old\_content}}{}{}
-\end{fulllineitems}
-
-\index{has\_changed() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.has_changed}\pysiglinewithargsret{\bfcode{has\_changed}}{}{}
-\end{fulllineitems}
-
-\index{notify() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.notify}\pysiglinewithargsret{\bfcode{notify}}{}{}
-\end{fulllineitems}
-
-\index{parse\_new\_content() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.parse_new_content}\pysiglinewithargsret{\bfcode{parse\_new\_content}}{\emph{content}}{}
-\end{fulllineitems}
-
-\index{prepare\_notification() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.prepare_notification}\pysiglinewithargsret{\bfcode{prepare\_notification}}{}{}
-\end{fulllineitems}
-
-\index{save\_new\_content() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.save_new_content}\pysiglinewithargsret{\bfcode{save\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{set\_diff() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.set_diff}\pysiglinewithargsret{\bfcode{set\_diff}}{\emph{value}}{}
-\end{fulllineitems}
-
-\index{set\_new\_content() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.set_new_content}\pysiglinewithargsret{\bfcode{set\_new\_content}}{\emph{value}}{}
-\end{fulllineitems}
-
-\index{set\_old\_content() (spy.HTMLSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.HTMLSite.set_old_content}\pysiglinewithargsret{\bfcode{set\_old\_content}}{\emph{value}}{}
-\end{fulllineitems}
-
+Extends default Site behaviour providing more information
+about changes in html resource.
 
 \end{fulllineitems}
 
 \index{ImproperlyConfigured}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.ImproperlyConfigured}\pysigline{\strong{exception }\code{spy.}\bfcode{ImproperlyConfigured}}~\index{args (spy.ImproperlyConfigured attribute)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.ImproperlyConfigured.args}\pysigline{\bfcode{args}}
-\end{fulllineitems}
-
-\index{with\_traceback() (spy.ImproperlyConfigured method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.ImproperlyConfigured.with_traceback}\pysiglinewithargsret{\bfcode{with\_traceback}}{}{}
-Exception.with\_traceback(tb) --
-set self.\_\_traceback\_\_ to tb and return self.
-
-\end{fulllineitems}
-
-
+\phantomsection\label{index:spy.ImproperlyConfigured}\pysigline{\strong{exception }\code{spy.}\bfcode{ImproperlyConfigured}}
 \end{fulllineitems}
 
 \index{Mailer (class in spy)}
@@ -591,22 +382,7 @@ Collects, creates and sends notification emails.
 \index{Mailer.NotSingle}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.Mailer.NotSingle}\pysigline{\strong{exception }\bfcode{NotSingle}}~\index{args (spy.Mailer.NotSingle attribute)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.Mailer.NotSingle.args}\pysigline{\bfcode{args}}
-\end{fulllineitems}
-
-\index{with\_traceback() (spy.Mailer.NotSingle method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.Mailer.NotSingle.with_traceback}\pysiglinewithargsret{\bfcode{with\_traceback}}{}{}
-Exception.with\_traceback(tb) --
-set self.\_\_traceback\_\_ to tb and return self.
-
-\end{fulllineitems}
-
-
+\phantomsection\label{index:spy.Mailer.NotSingle}\pysigline{\strong{exception }\bfcode{NotSingle}}
 \end{fulllineitems}
 
 \index{\_Mailer\_\_instance (spy.Mailer attribute)}
@@ -670,106 +446,14 @@ Sends all messages.
 \index{NewSiteDecorator (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{NewSiteDecorator}}{\emph{*args}, \emph{**kwargs}}{}~\index{compare() (spy.NewSiteDecorator method)}
+\phantomsection\label{index:spy.NewSiteDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{NewSiteDecorator}}{\emph{*args}, \emph{**kwargs}}{}
+Supports initial check for new sites.
+\index{compare() (spy.NewSiteDecorator method)}
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.NewSiteDecorator.compare}\pysiglinewithargsret{\bfcode{compare}}{}{}
-\end{fulllineitems}
+Nothing to compare ;)
 
-\index{download\_new\_content() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.download_new_content}\pysiglinewithargsret{\bfcode{download\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{download\_old\_content() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.download_old_content}\pysiglinewithargsret{\bfcode{download\_old\_content}}{}{}
-\end{fulllineitems}
-
-\index{get\_diff() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.get_diff}\pysiglinewithargsret{\bfcode{get\_diff}}{}{}
-\end{fulllineitems}
-
-\index{get\_filename() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.get_filename}\pysiglinewithargsret{\bfcode{get\_filename}}{}{}
-\end{fulllineitems}
-
-\index{get\_location() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.get_location}\pysiglinewithargsret{\bfcode{get\_location}}{}{}
-\end{fulllineitems}
-
-\index{get\_name() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.get_name}\pysiglinewithargsret{\bfcode{get\_name}}{}{}
-\end{fulllineitems}
-
-\index{get\_new\_content() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.get_new_content}\pysiglinewithargsret{\bfcode{get\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{get\_old\_content() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.get_old_content}\pysiglinewithargsret{\bfcode{get\_old\_content}}{}{}
-\end{fulllineitems}
-
-\index{has\_changed() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.has_changed}\pysiglinewithargsret{\bfcode{has\_changed}}{}{}
-\end{fulllineitems}
-
-\index{notify() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.notify}\pysiglinewithargsret{\bfcode{notify}}{}{}
-\end{fulllineitems}
-
-\index{parse\_new\_content() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.parse_new_content}\pysiglinewithargsret{\bfcode{parse\_new\_content}}{\emph{content}}{}
-\end{fulllineitems}
-
-\index{prepare\_notification() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.prepare_notification}\pysiglinewithargsret{\bfcode{prepare\_notification}}{}{}
-\end{fulllineitems}
-
-\index{save\_new\_content() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.save_new_content}\pysiglinewithargsret{\bfcode{save\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{set\_diff() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.set_diff}\pysiglinewithargsret{\bfcode{set\_diff}}{\emph{value}}{}
-\end{fulllineitems}
-
-\index{set\_new\_content() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.set_new_content}\pysiglinewithargsret{\bfcode{set\_new\_content}}{\emph{value}}{}
-\end{fulllineitems}
-
-\index{set\_old\_content() (spy.NewSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.NewSiteDecorator.set_old_content}\pysiglinewithargsret{\bfcode{set\_old\_content}}{\emph{value}}{}
 \end{fulllineitems}
 
 
@@ -778,106 +462,12 @@ Sends all messages.
 \index{OfflineSiteDecorator (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{OfflineSiteDecorator}}{\emph{subject}}{}~\index{compare() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.compare}\pysiglinewithargsret{\bfcode{compare}}{}{}
-\end{fulllineitems}
-
+\phantomsection\label{index:spy.OfflineSiteDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{OfflineSiteDecorator}}{\emph{subject}}{}
+Provides access to content offline.
 \index{download\_new\_content() (spy.OfflineSiteDecorator method)}
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.OfflineSiteDecorator.download_new_content}\pysiglinewithargsret{\bfcode{download\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{download\_old\_content() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.download_old_content}\pysiglinewithargsret{\bfcode{download\_old\_content}}{}{}
-\end{fulllineitems}
-
-\index{get\_diff() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.get_diff}\pysiglinewithargsret{\bfcode{get\_diff}}{}{}
-\end{fulllineitems}
-
-\index{get\_filename() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.get_filename}\pysiglinewithargsret{\bfcode{get\_filename}}{}{}
-\end{fulllineitems}
-
-\index{get\_location() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.get_location}\pysiglinewithargsret{\bfcode{get\_location}}{}{}
-\end{fulllineitems}
-
-\index{get\_name() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.get_name}\pysiglinewithargsret{\bfcode{get\_name}}{}{}
-\end{fulllineitems}
-
-\index{get\_new\_content() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.get_new_content}\pysiglinewithargsret{\bfcode{get\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{get\_old\_content() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.get_old_content}\pysiglinewithargsret{\bfcode{get\_old\_content}}{}{}
-\end{fulllineitems}
-
-\index{has\_changed() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.has_changed}\pysiglinewithargsret{\bfcode{has\_changed}}{}{}
-\end{fulllineitems}
-
-\index{notify() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.notify}\pysiglinewithargsret{\bfcode{notify}}{}{}
-\end{fulllineitems}
-
-\index{parse\_new\_content() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.parse_new_content}\pysiglinewithargsret{\bfcode{parse\_new\_content}}{\emph{content}}{}
-\end{fulllineitems}
-
-\index{prepare\_notification() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.prepare_notification}\pysiglinewithargsret{\bfcode{prepare\_notification}}{}{}
-\end{fulllineitems}
-
-\index{save\_new\_content() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.save_new_content}\pysiglinewithargsret{\bfcode{save\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{set\_diff() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.set_diff}\pysiglinewithargsret{\bfcode{set\_diff}}{\emph{value}}{}
-\end{fulllineitems}
-
-\index{set\_new\_content() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.set_new_content}\pysiglinewithargsret{\bfcode{set\_new\_content}}{\emph{value}}{}
-\end{fulllineitems}
-
-\index{set\_old\_content() (spy.OfflineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OfflineSiteDecorator.set_old_content}\pysiglinewithargsret{\bfcode{set\_old\_content}}{\emph{value}}{}
 \end{fulllineitems}
 
 
@@ -886,106 +476,12 @@ Sends all messages.
 \index{OnlineSiteDecorator (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{OnlineSiteDecorator}}{\emph{subject}}{}~\index{compare() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.compare}\pysiglinewithargsret{\bfcode{compare}}{}{}
-\end{fulllineitems}
-
+\phantomsection\label{index:spy.OnlineSiteDecorator}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{OnlineSiteDecorator}}{\emph{subject}}{}
+Provides access to content online.
 \index{download\_new\_content() (spy.OnlineSiteDecorator method)}
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.OnlineSiteDecorator.download_new_content}\pysiglinewithargsret{\bfcode{download\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{download\_old\_content() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.download_old_content}\pysiglinewithargsret{\bfcode{download\_old\_content}}{}{}
-\end{fulllineitems}
-
-\index{get\_diff() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.get_diff}\pysiglinewithargsret{\bfcode{get\_diff}}{}{}
-\end{fulllineitems}
-
-\index{get\_filename() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.get_filename}\pysiglinewithargsret{\bfcode{get\_filename}}{}{}
-\end{fulllineitems}
-
-\index{get\_location() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.get_location}\pysiglinewithargsret{\bfcode{get\_location}}{}{}
-\end{fulllineitems}
-
-\index{get\_name() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.get_name}\pysiglinewithargsret{\bfcode{get\_name}}{}{}
-\end{fulllineitems}
-
-\index{get\_new\_content() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.get_new_content}\pysiglinewithargsret{\bfcode{get\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{get\_old\_content() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.get_old_content}\pysiglinewithargsret{\bfcode{get\_old\_content}}{}{}
-\end{fulllineitems}
-
-\index{has\_changed() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.has_changed}\pysiglinewithargsret{\bfcode{has\_changed}}{}{}
-\end{fulllineitems}
-
-\index{notify() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.notify}\pysiglinewithargsret{\bfcode{notify}}{}{}
-\end{fulllineitems}
-
-\index{parse\_new\_content() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.parse_new_content}\pysiglinewithargsret{\bfcode{parse\_new\_content}}{\emph{content}}{}
-\end{fulllineitems}
-
-\index{prepare\_notification() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.prepare_notification}\pysiglinewithargsret{\bfcode{prepare\_notification}}{}{}
-\end{fulllineitems}
-
-\index{save\_new\_content() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.save_new_content}\pysiglinewithargsret{\bfcode{save\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{set\_diff() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.set_diff}\pysiglinewithargsret{\bfcode{set\_diff}}{\emph{value}}{}
-\end{fulllineitems}
-
-\index{set\_new\_content() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.set_new_content}\pysiglinewithargsret{\bfcode{set\_new\_content}}{\emph{value}}{}
-\end{fulllineitems}
-
-\index{set\_old\_content() (spy.OnlineSiteDecorator method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.OnlineSiteDecorator.set_old_content}\pysiglinewithargsret{\bfcode{set\_old\_content}}{\emph{value}}{}
 \end{fulllineitems}
 
 
@@ -994,12 +490,12 @@ Sends all messages.
 \index{SPy (class in spy)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.SPy}\pysigline{\strong{class }\code{spy.}\bfcode{SPy}}
-Facade pattern
+\phantomsection\label{index:spy.SPy}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{SPy}}{\emph{site\_slugs=None}}{}
+Facade pattern.
 \index{configure() (spy.SPy method)}
 
 \begin{fulllineitems}
-\phantomsection\label{index:spy.SPy.configure}\pysiglinewithargsret{\bfcode{configure}}{\emph{site\_slugs=None}}{}
+\phantomsection\label{index:spy.SPy.configure}\pysiglinewithargsret{\bfcode{configure}}{}{}
 \end{fulllineitems}
 
 \index{get\_sites() (spy.SPy method)}
@@ -1020,6 +516,14 @@ Facade pattern
 \phantomsection\label{index:spy.SPy.notify}\pysiglinewithargsret{\bfcode{notify}}{}{}
 \end{fulllineitems}
 
+\index{run() (spy.SPy method)}
+
+\begin{fulllineitems}
+\phantomsection\label{index:spy.SPy.run}\pysiglinewithargsret{\bfcode{run}}{}{}
+Runs everything.
+
+\end{fulllineitems}
+
 \index{spy() (spy.SPy method)}
 
 \begin{fulllineitems}
@@ -1038,6 +542,8 @@ Represents single resource
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Site.compare}\pysiglinewithargsret{\bfcode{compare}}{}{}
+Checks if new content is different than old content.
+
 \end{fulllineitems}
 
 \index{download\_new\_content() (spy.Site method)}
@@ -1100,6 +606,8 @@ Return old content.
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Site.has_changed}\pysiglinewithargsret{\bfcode{has\_changed}}{}{}
+Return \code{True} if resource has changed.
+
 \end{fulllineitems}
 
 \index{parse\_new\_content() (spy.Site method)}
@@ -1114,12 +622,16 @@ Parses new content after downloading.
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Site.prepare_notification}\pysiglinewithargsret{\bfcode{prepare\_notification}}{}{}
+Feeds \code{Mailer}.
+
 \end{fulllineitems}
 
 \index{save\_new\_content() (spy.Site method)}
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.Site.save_new_content}\pysiglinewithargsret{\bfcode{save\_new\_content}}{}{}
+Saves new content for future comparisons.
+
 \end{fulllineitems}
 
 \index{set\_diff() (spy.Site method)}
@@ -1151,11 +663,13 @@ Sets old content from \emph{value}.
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.SiteFactory}\pysigline{\strong{class }\code{spy.}\bfcode{SiteFactory}}
-Factory pattern
+Factory pattern.
 \index{get\_site() (spy.SiteFactory method)}
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.SiteFactory.get_site}\pysiglinewithargsret{\bfcode{get\_site}}{\emph{section}}{}
+Generates \code{Site} object.
+
 \end{fulllineitems}
 
 
@@ -1165,107 +679,12 @@ Factory pattern
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.TextSite}\pysiglinewithargsret{\strong{class }\code{spy.}\bfcode{TextSite}}{\emph{*args}, \emph{**kwargs}}{}
-cokolwiek trescia tekstowa
+Extends default Site behaviour providing more information (unified diff)
+about changes in text resource.
 \index{compare() (spy.TextSite method)}
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.TextSite.compare}\pysiglinewithargsret{\bfcode{compare}}{}{}
-\end{fulllineitems}
-
-\index{download\_new\_content() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.download_new_content}\pysiglinewithargsret{\bfcode{download\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{download\_old\_content() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.download_old_content}\pysiglinewithargsret{\bfcode{download\_old\_content}}{}{}
-\end{fulllineitems}
-
-\index{get\_diff() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.get_diff}\pysiglinewithargsret{\bfcode{get\_diff}}{}{}
-\end{fulllineitems}
-
-\index{get\_filename() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.get_filename}\pysiglinewithargsret{\bfcode{get\_filename}}{}{}
-\end{fulllineitems}
-
-\index{get\_location() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.get_location}\pysiglinewithargsret{\bfcode{get\_location}}{}{}
-\end{fulllineitems}
-
-\index{get\_name() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.get_name}\pysiglinewithargsret{\bfcode{get\_name}}{}{}
-\end{fulllineitems}
-
-\index{get\_new\_content() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.get_new_content}\pysiglinewithargsret{\bfcode{get\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{get\_old\_content() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.get_old_content}\pysiglinewithargsret{\bfcode{get\_old\_content}}{}{}
-\end{fulllineitems}
-
-\index{has\_changed() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.has_changed}\pysiglinewithargsret{\bfcode{has\_changed}}{}{}
-\end{fulllineitems}
-
-\index{notify() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.notify}\pysiglinewithargsret{\bfcode{notify}}{}{}
-\end{fulllineitems}
-
-\index{parse\_new\_content() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.parse_new_content}\pysiglinewithargsret{\bfcode{parse\_new\_content}}{\emph{content}}{}
-\end{fulllineitems}
-
-\index{prepare\_notification() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.prepare_notification}\pysiglinewithargsret{\bfcode{prepare\_notification}}{}{}
-\end{fulllineitems}
-
-\index{save\_new\_content() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.save_new_content}\pysiglinewithargsret{\bfcode{save\_new\_content}}{}{}
-\end{fulllineitems}
-
-\index{set\_diff() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.set_diff}\pysiglinewithargsret{\bfcode{set\_diff}}{\emph{value}}{}
-\end{fulllineitems}
-
-\index{set\_new\_content() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.set_new_content}\pysiglinewithargsret{\bfcode{set\_new\_content}}{\emph{value}}{}
-\end{fulllineitems}
-
-\index{set\_old\_content() (spy.TextSite method)}
-
-\begin{fulllineitems}
-\phantomsection\label{index:spy.TextSite.set_old_content}\pysiglinewithargsret{\bfcode{set\_old\_content}}{\emph{value}}{}
 \end{fulllineitems}
 
 
@@ -1275,6 +694,8 @@ cokolwiek trescia tekstowa
 
 \begin{fulllineitems}
 \phantomsection\label{index:spy.main}\pysiglinewithargsret{\code{spy.}\bfcode{main}}{}{}
+Parses system args and runs \code{SPy}.
+
 \end{fulllineitems}
 
 \index{slugify() (in module spy)}
