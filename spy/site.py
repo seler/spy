@@ -1,4 +1,14 @@
 # -*- coding: utf-8 -*-
+import sys
+import os
+
+from spy.mailer import Mailer
+
+SPY_DEFAULT_CONFIG_FILE = '~/.spyrc'
+SPY_DEFAULT_DATA_DIR = '~/.sPy/'
+DEFAULT_SITE_TYPE = 'text'
+VERBOSE = True
+
 
 class Site(object):
     """
@@ -11,8 +21,8 @@ class Site(object):
         self.mailer = Mailer.get_instance()
         self.slug = slug
         self.recipients = recipients
-        self.filename = os.path.expanduser(os.path.join(SPY_DEFAULT_DATA_DIR,
-                                                    self.slug))
+        self.filename = os.path.expanduser(
+            os.path.join(SPY_DEFAULT_DATA_DIR, self.slug))
         self.diff = None
 
     def download_new_content(self):
@@ -81,10 +91,10 @@ class Site(object):
 
     def get_location(self):
         return self.location
-    
+
     def get_filename(self):
         return self.filename
-    
+
     def get_name(self):
         return self.name
 
@@ -105,5 +115,3 @@ class Site(object):
 
     def get_diff(self):
         return self.diff
-
-

@@ -1,4 +1,3 @@
-
 #    sPy: Python based script tracking changes at any url
 #    Copyright (C) 2011  Rafał Selewońko <rafal@selewonko.com>
 #
@@ -19,8 +18,10 @@
 import os
 from setuptools import setup
 
+
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
 
 setup(
     name="sPy",
@@ -31,8 +32,8 @@ setup(
     license="GPL",
     keywords="track watch changes",
     url="https://bitbucket.org/seler/spy",
-    packages=['spy'],
-    long_description=read('README'),
+    packages=["spy"],
+    long_description=read("README"),
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Environment :: Console",
@@ -42,5 +43,8 @@ setup(
         "Programming Language :: Python",
         "Topic :: Utilities",
     ],
-    scripts=['bin/spy'],
+    entry_points={"console_scripts": ["spy = spy.spy:main"]},
+    install_requires=[
+        "requests",
+    ]
 )

@@ -23,7 +23,7 @@ import os
 import re
 import sys
 
-from urllib.request import urlopen
+import requests
 
 from difflib import *
 
@@ -54,7 +54,7 @@ def slugify(value):
 class AbstractProxy(object):
     """
     Proxy pattern
-    
+
     Default proxy interface to ``Site``.
     """
 
@@ -93,10 +93,10 @@ class AbstractProxy(object):
 
     def get_location(self):
         return self.subject.get_location()
-    
+
     def get_filename(self):
         return self.subject.get_filename()
-    
+
     def get_name(self):
         return self.subject.get_name()
 
@@ -163,7 +163,7 @@ class BinarySite(AbstractProxy):
         """
         hash = hashlib.md5(content.encode('utf-8'))
         return hash.hexdigest()
-        
+
 
 class AbstractDecorator(object):
     """
@@ -207,10 +207,10 @@ class AbstractDecorator(object):
 
     def get_location(self):
         return self.subject.get_location()
-    
+
     def get_filename(self):
         return self.subject.get_filename()
-    
+
     def get_name(self):
         return self.subject.get_name()
 
@@ -232,9 +232,8 @@ class OnlineSiteDecorator(AbstractDecorator):
     Provides access to content online.
     """
     def download_new_content(self):
-        response = urlopen(self.subject.get_location())
-        content = response.read()
-        return self.subject.parse_new_content(content.decode('ascii', errors='ignore'))
+        response = requests.get(self.subject.get_location())
+        return self.subject.parse_new_content(response.text)
 
 
 class OfflineSiteDecorator(AbstractDecorator):
@@ -272,7 +271,7 @@ class NewSiteDecorator(AbstractDecorator):
             return self.subject.download_new_content()
         else:
             return ''
-    
+
     def download_old_content(self):
         """
         If it's new site returns empty string.
@@ -294,7 +293,7 @@ class SiteFactory(object):
         type = section.get('type', DEFAULT_SITE_TYPE).lower()
         location = section.get('location')
         site = section.get('site', 'online')
-    
+
         if type == 'text':
             site_class = TextSite
         if type == 'html':
@@ -303,7 +302,7 @@ class SiteFactory(object):
             site_class = BinarySite
 
         site_object = site_class(section.name, location, getattr(section, 'slug', slugify(section.name)), None)
-        # chain of decorators :D 
+        # chain of decorators :D
         if site == 'offline':
             site_object = OfflineSiteDecorator(site_object)
         elif site == 'online':
